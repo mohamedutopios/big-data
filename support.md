@@ -6,6 +6,7 @@ paginate: true
 author: Mohamed Aijjou
 header: "![h:70px](https://utopios-marp-assets.s3.eu-west-3.amazonaws.com/logo_blanc.svg)"
 footer: "Utopios® Tous droits réservés"
+
 ---
 
 <!-- _class: lead -->
@@ -36,1985 +37,1926 @@ footer: "Utopios® Tous droits réservés"
 
 ---
 
-## Concepts et Enjeux
+## Introduction au Big Data
 
-#### Signes avant coureurs du Cloud
+#### 1️⃣ Définition et les **5V du Big Data**
 
 <br/>
 
 <div style="font-size:39px">
 
-Les signes avant-coureurs de l'émergence du Cloud dans un système d'information (SI) sont souvent liés à des besoins technologiques, des tendances de marché, et des demandes organisationnelles croissantes.
-
----
-
-## Concepts et Enjeux
-
-#### Signes avant coureurs du Cloud
-
-<br/>
-
-<div style="font-size:28px">
-
-### **1. Pressions organisationnelles**
-- **Demande d'agilité :** Les entreprises recherchent des solutions pour réduire les délais de mise sur le marché des produits et services.
-- **Besoin de flexibilité :** Les équipes souhaitent des environnements scalables pour gérer des charges de travail fluctuantes.
-- **Focus sur le cœur de métier :** Réduction des efforts consacrés à la gestion des infrastructures pour se concentrer sur les activités à forte valeur ajoutée.
-
----
-
-## Concepts et Enjeux
-
-#### Signes avant coureurs du Cloud
-
-<br/>
-
-<div style="font-size:28px">
-
-### **2. Limitations des infrastructures traditionnelles**
-- **Coûts élevés :** Les investissements CapEx liés aux datacenters deviennent difficilement justifiables face à l'évolution rapide des besoins.
-- **Manque de scalabilité :** Les infrastructures internes peinent à répondre aux pics de demande imprévus.
-- **Maintenance complexe :** Les mises à jour, la sécurité, et la gestion deviennent de plus en plus lourdes.
-
----
-
-## Concepts et Enjeux
-
-#### Signes avant coureurs du Cloud
-
-<br/>
-
-<div style="font-size:28px">
-
-### **3. Adoption croissante des nouvelles technologies**
-- **Virtualisation généralisée :** Les entreprises qui maîtrisent les environnements virtualisés (VMware, Hyper-V, etc.) trouvent naturel de migrer vers le Cloud.
-- **Écosystème DevOps :** La popularité croissante des pratiques DevOps incite à l’utilisation d’environnements CI/CD et d’outils Cloud natifs.
-- **Popularité des conteneurs :** Kubernetes, Docker, et autres outils favorisent la transition vers des architectures Cloud-native.
-
----
-
-## Présentation de Prometheus
-
-#### Les bases du monitoring
-
-<br/>
-
-<div style="font-size:28px">
-
-<u>4. **Types de Monitoring** </u>
-
-- **Monitoring en temps réel :** Collecte et affichage en direct des données.
-- **Monitoring historique :** Analyse des données sur une période pour détecter des tendances et établir des prévisions.
-- **Monitoring de bout en bout :** Suivi des performances d’une transaction du début à la fin pour assurer une bonne expérience utilisateur.
-
----
-
-## Présentation de Prometheus
-
-#### Les bases du monitoring
-
-<br/>
-
-<div style="font-size:28px">
-
-<u> **5. Outils de Monitoring** </u>
-
-- **Prometheus :** Utilisé pour collecter, agréger, et alerter en fonction de métriques.
-- **Grafana :** Fournit des visualisations interactives pour les données de monitoring.
-- **Nagios :** Surveille les systèmes, réseaux et applications, avec des alertes et des notifications.
-- **Zabbix :** Solution de monitoring avec des capacités avancées de collecte de données et d’alertes.
-- **Elastic Stack (ELK) :** Utilisé pour centraliser et analyser les logs avec Elasticsearch, Logstash et Kibana.
-
----
-
-## Présentation de Prometheus
-
-#### Les bases du monitoring
-
-<br/>
-
-<div style="font-size:28px">
-
-<u>6. **Alertes et Gestion des Incidents** </u>
-
-- **Seuils d’alerte :** Définir des seuils pour chaque métrique critique (par exemple, une utilisation CPU au-dessus de 80%).
-- **Escalade des alertes :** Des étapes de notifications progressives basées sur la criticité des incidents.
-- **Rétroaction :** Après la résolution d’un incident, faire une analyse rétrospective pour éviter des récidives.
-
----
-
-## Présentation de Prometheus
-
-#### Les bases du monitoring
-
-<br/>
-
-<div style="font-size:24px">
-
-<u> 7. **Meilleures Pratiques** </u>
-
-- **Définir des KPI (Key Performance Indicators) :** Identifier des indicateurs de performance clés spécifiques à l'infrastructure et aux applications.
-- **Automatiser les alertes :** Pour éviter les surveillances manuelles et réagir rapidement aux incidents.
-- **Optimiser les seuils d'alerte :** Pour éviter les alertes inutiles et se concentrer sur celles à haute priorité.
-- **Créer des Dashboards :** Avoir une vue d’ensemble des performances et des problèmes potentiels.
-- **Analyser les tendances :** Examiner les données historiques pour améliorer la gestion des capacités et optimiser les performances.
-
----
-
-## Présentation de Prometheus
-
-#### Les bases du monitoring
-
-<br>
-
-<center>
-<img src="./assets/moni.jpeg" width="740px">
-</center>
-
-
----
-
-## Présentation de Prometheus
-
-#### Qu’est-ce que Prometheus ?
-
-<br/>
-
-<div style="font-size:27px">
-
-- Prometheus est une solution de **monitoring open source** développée initialement par SoundCloud en 2012 et ensuite donnée à la **Cloud Native Computing Foundation (CNCF)** en 2016.
-- Il est devenu un outil standard pour la **surveillance des applications cloud-native** et des infrastructures modernes.
-- Prometheus est apprécié pour sa capacité à collecter des métriques en temps réel, à exécuter des requêtes efficaces, et à fournir des alertes flexibles.
-- Il est souvent utilisé avec Kubernetes et d'autres technologies cloud-native.
+Le Big Data se définit par un ensemble de caractéristiques qui dépassent les capacités traditionnelles des systèmes d’information classiques. Historiquement, on parle des **3V** (Volume, Vélocité, Variété), mais la définition a été enrichie à **5V** (et parfois même 7V, 10V dans certaines littératures).
 
 </div>
 
 ---
-## Présentation de Prometheus
 
-#### Qu’est-ce que Prometheus ?
+## Introduction au Big Data
 
-<br>
+#### 1️⃣ Définition et les **5V du Big Data**
 
-<center>
-<img src="./assets/cncf.webp" width="700px">
-</center>
+<div style="font-size:28px">
 
+### 🔹 Les 5V en détail
 
----
+1. **Volume**
 
-## Présentation de Prometheus
-
-#### Qu’est-ce que Prometheus ?
-
-<br/>
-
-<div style="font-size:21px">
-
-Prometheus est un système de **monitoring et d’alerting** qui collecte et stocke des métriques en temps réel sous forme de séries temporelles, chaque métrique étant identifiée par un ensemble de libellés ("labels").
-
-- **Modèle de données en séries temporelles** : les métriques sont stockées en fonction du temps, ce qui facilite le suivi historique des performances.
-- **Requêtes puissantes avec PromQL** : Prometheus Query Language (PromQL) permet d’extraire et de transformer les métriques pour les analyser.
-- **Indépendant et autonome** : Prometheus fonctionne sans dépendances supplémentaires, stockant ses données localement.
-- **Alerting intégré** : avec Alertmanager, Prometheus peut envoyer des alertes par divers canaux de communication.
-- **Flexibilité et extensibilité** : compatible avec des exportateurs qui permettent de surveiller des applications spécifiques (comme les bases de données et les serveurs web).
-
+   * Explosion de la quantité de données produites : données transactionnelles, logs systèmes, réseaux sociaux, IoT, capteurs, images, vidéos, données médicales…
+   * On parle de **pétaoctets à exaoctets** (et même zettaoctets à l’échelle mondiale).
+   * Exemple : Facebook génère plusieurs pétaoctets de données chaque jour ; les voitures autonomes produisent jusqu’à **4 To de données/jour/voiture**.
 </div>
 
----
-
-## Présentation de Prometheus
-
-#### L’architecture de Prometheus
-
-<br/>
-
-<div style="font-size:23px">
-
-L’architecture de Prometheus est composée de plusieurs composants principaux :
-
-1. **Prometheus Server** :
-
-- **Collecte des métriques** : Prometheus utilise un modèle "pull" pour interroger des endpoints HTTP exposant des métriques en format texte, appelés _exporters_.
-- **Stockage des données temporelles** : Les métriques sont stockées en local dans une base de données TSDB (Time Series Database), spécialement optimisée pour les séries temporelles. Ce stockage est souvent limité dans le temps, car Prometheus est conçu pour des données de métriques à court et moyen terme.
-- **Évaluation des règles** : Prometheus évalue les règles définies dans sa configuration (par exemple, des alertes) en utilisant PromQL et stocke temporairement les résultats des calculs.
-
-</div>
 
 ---
 
-## Présentation de Prometheus
+## Introduction au Big Data
 
-#### L’architecture de Prometheus
-
-<br/>
+#### 1️⃣ Définition et les **5V du Big Data**
 
 <div style="font-size:32px">
 
-2. **Exportateurs (Exporters)** :
-   - Des agents ou applications qui exposent des métriques de systèmes ou applications externes sous un format compatible avec Prometheus.
-   - Exemples : `Node Exporter` pour les métriques système, `MySQL Exporter` pour les bases de données MySQL.
+### 🔹 Les 5V en détail
+
+2. **Vélocité**
+
+   * Capacité à traiter les données en **temps réel ou quasi temps réel**.
+   * Flux continus (streaming) issus de capteurs IoT, transactions bancaires, interactions clients.
+   * Exemple : détection de fraude bancaire doit se faire en **millisecondes**.
 
 </div>
 
----
-
-## Présentation de Prometheus
-
-#### L’architecture de Prometheus
-
-<br/>
-
-<div style="font-size:32px">
-
-3. **Alertmanager** :
-   - Composant dédié à la gestion des alertes déclenchées par des règles configurées dans Prometheus.
-   - Permet de configurer des actions sur les alertes, comme envoyer des notifications par email, Slack, ou autres canaux.
-
-</div>
-
----
-
-## Présentation de Prometheus
-
-#### L’architecture de Prometheus
-
-<br/>
-
-<div style="font-size:32px">
-
-4.  **Pushgateway**
-
-- Le _Pushgateway_ est un composant permettant de "pousser" des métriques vers Prometheus, contrairement au modèle pull classique. Il est utile pour les jobs éphémères ou batch, qui génèrent des métriques à des moments précis mais ne fonctionnent pas en continu.
-- Les métriques envoyées au Pushgateway sont ensuite collectées par Prometheus, comme pour les autres endpoints.
-
-</div>
-
----
-
-## Présentation de Prometheus
-
-#### L’architecture de Prometheus
-
-<br/>
-
-<div style="font-size:32px">
-
-5. **Interface utilisateur (UI)** :
-   - Interface web basique pour consulter les métriques et exécuter des requêtes PromQL.
-   - Compatible avec des outils de visualisation avancés comme **Grafana**.
-   </div>
-
----
-
-## Présentation de Prometheus
-
-#### L’architecture de Prometheus
-
-<br/>
-
-<div style="font-size:32px">
-
-6. **PromQL (Prometheus Query Language)**
-
-   - Le langage de requête intégré PromQL permet d’extraire, filtrer et analyser les données stockées dans Prometheus. C'est un langage clé dans l'architecture de Prometheus, car il permet aux utilisateurs de créer des dashboards, des alertes, et des rapports précis.
-   - Il est également utilisé pour évaluer les règles d'alerte.
-
----
-
-## Présentation de Prometheus
-
-#### L’architecture de Prometheus
-
-<br>
-
-<center>
-<img src="./assets/prom1.png" width="600px">
-</center>
 
 
 ---
 
-## Présentation de Prometheus
+## Introduction au Big Data
 
-#### L’architecture de Prometheus
-
-<br>
-
-<center>
-<img src="./assets/prom2.webp" width="600px">
-</center>
-
-
----
-## Présentation de Prometheus
-
-#### L’architecture de Prometheus
-
-<br>
-
-<center>
-<img src="./assets/prom3.jpg" width="650px">
-</center>
-
-
----
-
-## Présentation de Prometheus
-
-#### Ce que ne fait pas Prometheus
-
-<br/>
-
-<div style="font-size:24px">
-
-- **Pas un outil de log** : Prometheus collecte des métriques (valeurs numériques) mais ne stocke pas de logs (données événementielles non structurées).
-- **Pas de stockage à long terme** : Prometheus conserve les métriques localement, mais son stockage n'est pas conçu pour des rétentions longues. Des solutions comme Thanos ou Cortex peuvent être utilisées pour l’archivage à long terme.
-- **Pas de monitoring distribué natif** : bien que Prometheus soit adapté pour les environnements cloud, chaque instance est autonome, ce qui nécessite des adaptations pour un monitoring distribué sur plusieurs datacenters.
-- **Pas de gestion d’authentification et d’autorisation** : l’accès par défaut à Prometheus est ouvert, et il n'a pas de gestion d'authentification intégrée, ce qui nécessite des configurations de sécurité supplémentaires.
-
-</div>
-
----
-
-## Présentation de Prometheus
-
-#### Installation Prometheus
-
-<div style="font-size:24px">
-
-### 1. **Téléchargement et installation de Prometheus**
-
-- Accédez à la [page de téléchargement de Prometheus](https://prometheus.io/download/) et choisissez la dernière version stable.
-- Téléchargez Prometheus avec `wget` :
-  ```bash
-  wget https://github.com/prometheus/prometheus/releases/download/v2.47.0/prometheus-2.47.0.linux-amd64.tar.gz
-  ```
-- Décompressez l’archive téléchargée :
-  ```bash
-  tar xvfz prometheus-2.47.0.linux-amd64.tar.gz
-  ```
-- Déplacez le dossier extrait dans `/usr/local/bin` (ou tout autre dossier de votre choix) pour l’accessibilité :
-  ```bash
-  sudo mv prometheus-2.47.0.linux-amd64 /usr/local/bin/prometheus
-  ```
-
-</div>
-
----
-
-## Présentation de Prometheus
-
-#### Installation Prometheus
-
-<div style="font-size:19px">
-
-### 2. **Création d’un utilisateur système pour Prometheus**
-
-- Pour des raisons de sécurité, créez un utilisateur sans privilège pour exécuter Prometheus :
-  ```bash
-  sudo useradd --no-create-home --shell /bin/false prometheus
-  ```
-- Créez les répertoires pour les fichiers de configuration et les données :
-  ```bash
-  sudo mkdir /etc/prometheus
-  sudo mkdir /var/lib/prometheus
-  ```
-- Copiez les fichiers nécessaires :
-  ```bash
-  sudo cp /usr/local/bin/prometheus/prometheus /usr/local/bin/
-  sudo cp /usr/local/bin/prometheus/promtool /usr/local/bin/
-  sudo cp -r /usr/local/bin/prometheus/consoles /etc/prometheus/
-  sudo cp -r /usr/local/bin/prometheus/console_libraries /etc/prometheus/
-  ```
-- Assignez les permissions au nouvel utilisateur :
-  ```bash
-  sudo chown -R prometheus:prometheus /etc/prometheus
-  sudo chown -R prometheus:prometheus /var/lib/prometheus
-  ```
-
-</div>
-
----
-
-## Présentation de Prometheus
-
-#### Installation Prometheus
-
-<div style="font-size:20px">
-
-### 3. **Configuration de Prometheus**
-
-- Créez le fichier de configuration `prometheus.yml` dans `/etc/prometheus/` :
-  ```bash
-  sudo nano /etc/prometheus/prometheus.yml
-  ```
-- Voici un exemple basique de configuration qui inclut un job pour surveiller les métriques de Prometheus lui-même (target `localhost:9090`) et une autre cible pour un _Node Exporter_ :
-
-  ```yaml
-  global:
-    scrape_interval: 15s # Intervalle de collecte par défaut
-    evaluation_interval: 15s # Intervalle d'évaluation des règles d'alerte
-
-  scrape_configs:
-    - job_name: "prometheus"
-      static_configs:
-        - targets: ["localhost:9090"]
-
-    - job_name: "node_exporter"
-      static_configs:
-        - targets: ["localhost:9100"] # Remplacez par l'IP de votre Node Exporter si nécessaire
-  ```
-
-</div>
-
----
-
-## Présentation de Prometheus
-
-#### Installation Prometheus
-
-<div style="font-size:17px">
-
-### 4. **Création d’un fichier de service Systemd pour Prometheus**
-
-- Créez un fichier de service pour Systemd afin de gérer Prometheus comme un service système :
-  ```bash
-  sudo nano /etc/systemd/system/prometheus.service
-  ```
-- Ajoutez la configuration suivante dans le fichier :
-
-  ```ini
-  [Unit]
-  Description=Prometheus Monitoring
-  Wants=network-online.target
-  After=network-online.target
-
-  [Service]
-  User=prometheus
-  Group=prometheus
-  Type=simple
-  ExecStart=/usr/local/bin/prometheus \
-    --config.file=/etc/prometheus/prometheus.yml \
-    --storage.tsdb.path=/var/lib/prometheus/ \
-    --web.console.templates=/etc/prometheus/consoles \
-    --web.console.libraries=/etc/prometheus/console_libraries
-
-  [Install]
-  WantedBy=multi-user.target
-  ```
-
-</div>
-
----
-
-## Présentation de Prometheus
-
-#### Installation Prometheus
-
-<div style="font-size:27px">
-
-### 5. **Démarrage et activation du service Prometheus**
-
-- Rechargez la configuration de Systemd pour prendre en compte le nouveau service :
-  ```bash
-  sudo systemctl daemon-reload
-  ```
-- Démarrez Prometheus :
-  ```bash
-  sudo systemctl start prometheus
-  ```
-- Activez Prometheus pour qu’il se lance automatiquement au démarrage de la machine :
-  ```bash
-  sudo systemctl enable prometheus
-  ```
-
-</div>
-
----
-
-## Présentation de Prometheus
-
-#### Installation Prometheus
+#### 1️⃣ Définition et les **5V du Big Data**
 
 <div style="font-size:30px">
 
-### 6. **Vérification de l’installation**
+### 🔹 Les 5V en détail
 
-- Accédez à l'interface web de Prometheus en ouvrant un navigateur et en allant à l'adresse suivante :
-  ```
-  http://localhost:9090
-  ```
-- Sur cette interface, vous pouvez visualiser les métriques, exécuter des requêtes PromQL, et voir les cibles de collecte (Targets) sous **Status > Targets**.
+3. **Variété**
 
-</div>
+   * Multiplicité des formats :
 
----
-
-## Présentation de Prometheus
-
-#### Installation Prometheus
-
-<div style="font-size:26px">
-
-### 7. **Configuration supplémentaire**
-
-- Pour ajouter plus de cibles à surveiller, ajoutez-les dans le fichier `prometheus.yml` sous `scrape_configs`.
-- Pour des règles d’alertes, vous pouvez créer un fichier de règles et l’inclure dans `prometheus.yml`, par exemple :
-  ```yaml
-  rule_files:
-    - /etc/prometheus/alert_rules.yml
-  ```
-- Dans ce fichier `alert_rules.yml`, vous pouvez configurer des alertes en utilisant des expressions PromQL.
+     * Structurées (SQL, tableaux relationnels)
+     * Semi-structurées (JSON, XML, logs, CSV)
+     * Non structurées (vidéos, images, audio, mails, réseaux sociaux).
+   * Plus de **80 % des données mondiales** sont **non structurées**.
 
 </div>
 
+
+
 ---
-## Surveillance d'infrastructure
 
-## Travaux pratiques
+## Introduction au Big Data
 
-<div style="font-size:35px">
+#### 1️⃣ Définition et les **5V du Big Data**
 
-<center>
+<div style="font-size:32px">
 
-# Déploiement et configuration d'un serveur Prometheus.
+### 🔹 Les 5V en détail
 
-</center>
+4. **Véracité**
+
+   * Fiabilité et qualité des données : données bruitées, incomplètes, biaisées.
+   * Risques : fake news, données corrompues, erreurs de saisie.
+   * Importance des techniques de **Data Cleaning, Data Governance, Data Lineage**.
 
 </div>
 
----
 
-<!-- _class: lead -->
-<!-- _paginate: false -->
 
-## Surveillance d'applications
 
 ---
 
-## Surveillance d'applications
+## Introduction au Big Data
 
-#### Les composants des métriques Prometheus
+#### 1️⃣ Définition et les **5V du Big Data**
+
+<div style="font-size:32px">
+
+### 🔹 Les 5V en détail
+
+
+5. **Valeur**
+
+   * Le but du Big Data : **transformer la donnée en valeur ajoutée**.
+   * Business value : optimiser coûts, améliorer l’expérience client, créer de nouveaux services, innover.
+   * Exemple : Netflix utilise le Big Data pour personnaliser ses recommandations → valeur directe en fidélisation et revenus.
+
+</div>
+
+
+
+
+
+---
+
+## Introduction au Big Data
+
+#### 2️⃣ Historique : de l’entrepôt de données au Lakehouse
+
+<div style="font-size:30px">
 
 <br>
 
-<div style="font-size:23px">
+#### 🔹 **Années 1980 – 1990 : Data Warehouse (Entrepôt de données)**
 
-Prometheus utilise différents types de métriques pour surveiller des applications et des systèmes, chacun ayant des caractéristiques spécifiques :
+* Vision : centraliser et consolider les données de l’entreprise pour le reporting et l’analyse décisionnelle.
+* Architecture : ETL (Extract – Transform – Load) → Data Warehouse (schéma rigide) → Outils BI (Tableau, Business Objects, Cognos).
+* Limite : données uniquement **structurées**, intégration lente, pas adapté aux données massives et variées.
 
-- **Compteur (Counter)** : Une métrique incrémentale, toujours positive, qui ne peut qu’augmenter. Utilisé pour des valeurs cumulatives, comme le nombre de requêtes HTTP reçues.
-- **Jauge (Gauge)** : Une métrique qui peut augmenter et diminuer, souvent utilisée pour surveiller des états actuels, comme l’utilisation de la mémoire ou la température.
-- **Histogramme** : Permet de mesurer la distribution d’une valeur sur une période. Idéal pour mesurer des temps de réponse par exemple.
-- **Résumé (Summary)** : Similaire à l’histogramme, mais fournit des statistiques de quantiles (comme les p95 ou p99), souvent pour des mesures de latence.
+</div>
 
-   </div>
+
+
+
 
 ---
 
-## Surveillance d'applications
+## Introduction au Big Data
 
-#### Les composants des métriques Prometheus
+#### 2️⃣ Historique : de l’entrepôt de données au Lakehouse
+
+<div style="font-size:30px">
 
 <br>
+
+### 🔹 **Années 2000 : Explosion du Web et des données**
+
+* Web 2.0, réseaux sociaux, vidéos, e-commerce → croissance exponentielle.
+* Google, Yahoo et Amazon développent de nouvelles approches (MapReduce, GFS, DynamoDB).
+* Hadoop (2005-2008) popularise le stockage distribué et le traitement parallèle.
+
+</div>
+
+
+
+
+
+
+---
+
+## Introduction au Big Data
+
+#### 2️⃣ Historique : de l’entrepôt de données au Lakehouse
+
+<div style="font-size:30px">
+
+<br>
+
+### 🔹 **Années 2010 : Data Lake**
+
+* Concept introduit par James Dixon (CTO Pentaho).
+* Stockage brut et massif de données **structurées, semi-structurées et non structurées** dans un même réservoir.
+* Principe : **“Schema on Read”** (le schéma est appliqué au moment de la lecture et non de l’écriture).
+* Avantage : flexibilité, coût faible avec le stockage objet (S3, Azure Blob, HDFS).
+* Limite : risque de “**Data Swamp**” (marécage de données inutilisables faute de gouvernance).
+
+</div>
+
+
+
+
+---
+
+## Introduction au Big Data
+
+#### 2️⃣ Historique : de l’entrepôt de données au Lakehouse
 
 <div style="font-size:29px">
 
-#### Nommage des métriques
+### 🔹 **Années 2020 : Lakehouse**
 
-- Les noms de métriques doivent être descriptifs, souvent au format `nom_domaine_action_unité` (exemple : `http_requests_total`).
-- Les unités sont souvent incluses dans le nom (comme `_total` pour un compteur ou `_bytes` pour les données en octets) pour éviter toute confusion.
+* Fusion des avantages du **Data Warehouse** et du **Data Lake**.
+* Supporte à la fois :
 
-   </div>
-
----
-
-## Surveillance d'applications
-
-#### Exposer les données dans une application (Python, Java)
-
-<div style="font-size:18px">
-
-#### Exposition des données en Python
-
-Avec Python, vous pouvez utiliser la bibliothèque `prometheus_client` pour exposer des métriques. :
-
-```python
-from prometheus_client import start_http_server, Counter, Gauge
-import time
-import random
-
-# Définition des métriques
-REQUEST_COUNT = Counter('http_requests_total', 'Total des requêtes HTTP reçues')
-IN_PROGRESS = Gauge('in_progress_requests', 'Nombre de requêtes en cours')
-
-def process_request():
-    REQUEST_COUNT.inc()
-    IN_PROGRESS.inc()
-    time.sleep(random.uniform(0.1, 1.0))  # Simule le traitement de la requête
-    IN_PROGRESS.dec()
-
-if __name__ == "__main__":
-    start_http_server(8000)  # Expose les métriques sur localhost:8000
-    while True:
-        process_request()
-```
-
-- Cette application expose les métriques en utilisant `start_http_server(8000)`, accessible sur `http://localhost:8000/metrics`.
-
-   </div>
-
----
-
-## Surveillance d'applications
-
-#### Exposer les données dans une application (Python, Java)
-
-<div style="font-size:17px">
-
-#### Exposition des données en Java
-
-```java
-
-public class MonitoringApp {
-    private static final Counter requestCount = Counter.build()
-            .name("http_requests_total")
-            .help("Total des requêtes HTTP")
-            .register();
-    private static final Gauge inProgressRequests = Gauge.build()
-            .name("in_progress_requests")
-            .help("Nombre de requêtes en cours")
-            .register();
-
-    public static void main(String[] args) throws Exception {
-        DefaultExports.initialize();  // Collecte des métriques JVM par défaut
-        HTTPServer server = new HTTPServer(8000);  // Expose sur localhost:8000
-        while (true) {
-            inProgressRequests.inc();
-            requestCount.inc();
-            // Simule un traitement
-            Thread.sleep((int)(Math.random() * 1000));
-            inProgressRequests.dec();
-        }
-    }
-}
-```
-
-- Les métriques sont exposées sur `http://localhost:8000/metrics`.
-
----
-
-## Surveillance d'applications
-
-#### Exposer les données dans une application (Python, Java)
-
-<div style="font-size:27px">
-
-#### Utilisation du PushGateway
-
-Le _PushGateway_ est utile pour les jobs éphémères qui n’exécutent pas de service continu. Voici un exemple d’envoi de métriques avec le PushGateway en Python :
-
-```python
-from prometheus_client import CollectorRegistry, Counter, push_to_gateway
-
-registry = CollectorRegistry()
-job_counter = Counter('job_completed_total', 'Total des jobs complétés', registry=registry)
-job_counter.inc()
-
-push_to_gateway('localhost:9091', job='batch_job', registry=registry)
-```
-
-- Cette commande envoie la métrique au PushGateway à `localhost:9091`, qui sera ensuite récupéré par Prometheus.
-
-   </div>
-
----
-
-## Surveillance d'applications
-
-#### Parser les données, types et labels
-
-<div style="font-size:18px">
-
-Les données exposées suivent un format texte structuré. Un exemple de données exposées pourrait être :
-
-```
-http_requests_total{status="200"} 1027
-http_requests_total{status="404"} 3
-in_progress_requests 5
-```
-
-- Les **labels** (`status="200"`, `status="404"`) permettent de catégoriser et de filtrer les données. Cela crée des _séries temporelles_ uniques pour chaque combinaison de label et de nom de métrique.
-- Les labels permettent des agrégations et des filtres puissants dans les requêtes PromQL (par exemple, somme des requêtes par `status`).
-
-#### Opérations sur les labels
-
-- **Agrégation par label** : On peut agréger des valeurs par label dans PromQL :
-  ```promql
-  sum(http_requests_total) by (status)
-  ```
-- **Filtrage par label** : Pour les requêtes spécifiques :
-  ```promql
-  http_requests_total{status="200"}
-  ```
-  </div>
-
----
-
-## Surveillance d'applications
-
-#### Connexion de Prometheus à Grafana
-
-<div style="font-size:16px">
-
-1. **Installation de Grafana** : Téléchargez et installez Grafana pour votre système.
-2. **Ajout de Prometheus comme source de données** :
-
-   - Dans Grafana, allez dans **Configuration > Data Sources** et ajoutez une nouvelle source de données.
-   - Sélectionnez _Prometheus_ et indiquez l’URL de Prometheus (par exemple, `http://localhost:9090`).
-   - Testez la connexion pour vérifier que Grafana peut accéder aux données de Prometheus.
-
-3. **Création de tableaux de bord (dashboards)** :
-
-   - Dans Grafana, créez un nouveau tableau de bord et ajoutez des panneaux (panels).
-   - Utilisez les requêtes PromQL pour récupérer les métriques souhaitées. Par exemple :
-     - Pour afficher le nombre total de requêtes HTTP : `http_requests_total`
-     - Pour la latence moyenne : `avg(http_request_duration_seconds)`
-   - Personnalisez les graphiques en ajustant les paramètres de visualisation, les titres, les couleurs, et les unités.
-
-4. **Exemple de requêtes pour les panneaux de Grafana** :
-   - **Compteur de requêtes par statut HTTP** : `sum by (status) (rate(http_requests_total[5m]))`
-   - **Utilisation de la mémoire** : `node_memory_Active_bytes / node_memory_MemTotal_bytes * 100`
-   - **Temps de réponse moyen** : `histogram_quantile(0.95, sum(rate(http_request_duration_seconds_bucket[5m])) by (le))`
+  * Données structurées (requêtes SQL, BI)
+  * Données semi/non structurées (logs, JSON, multimédia)
+* Exemple de technologies : **Delta Lake (Databricks)**, **Snowflake**, **Apache Iceberg**.
+* Concept clé : **unifier BI + IA/ML** sur une même plateforme.
 
 </div>
 
 ---
-## Surveillance d'infrastructure
 
-## Travaux pratiques
+## Introduction au Big Data
 
-<div style="font-size:35px">
+#### 3️⃣ Comparaison : **Data Warehouse vs Data Lake vs Data Mesh**
+
+<div style="font-size:31px">
+
+### 🔹 **Data Warehouse (Entrepôt de données)**
+
+* **Approche** : centralisée, structurée.
+* **Schéma** : *Schema on Write* (schéma défini avant intégration).
+* **Cas d’usage** : reporting, BI, analyses historiques.
+* **Exemples** : Teradata, Oracle, SQL Server, SAP BW, Google BigQuery.
+* **Limites** : coûteux, rigide, pas adapté aux données massives et non structurées.
+
+</div>
+
+---
+
+## Introduction au Big Data
+
+#### 3️⃣ Comparaison : **Data Warehouse vs Data Lake vs Data Mesh**
+
+<div style="font-size:31px">
+
+### 🔹 **Data Lake**
+
+* **Approche** : stockage brut et massif.
+* **Schéma** : *Schema on Read*.
+* **Cas d’usage** : exploration, machine learning, IA, stockage universel.
+* **Exemples** : Hadoop HDFS, AWS S3, Azure Data Lake Storage, GCP Cloud Storage.
+* **Limites** : gouvernance difficile, risque de Data Swamp.
+
+</div>
+
+---
+
+## Introduction au Big Data
+
+#### 3️⃣ Comparaison : **Data Warehouse vs Data Lake vs Data Mesh**
+
+<div style="font-size:31px">
+
 
 <center>
-
-# Se connecter à Grafana et mettre en place des graphiques.
-
+<img src="./assets/warehouse.png" width="760px">
 </center>
 
 </div>
 
 ---
 
+### Introduction au Big Data
+
+##### 3️⃣ Comparaison : **Data Warehouse vs Data Lake vs Data Mesh**
+
+<div style="font-size:20px">
+
+### 🔹 **Data Mesh (nouvelle génération, années 2020)**
+
+* **Approche** : décentralisée et orientée produit.
+* Chaque domaine (marketing, finance, supply chain…) gère **sa propre donnée comme un produit**.
+* S’appuie sur des **principes d’architecture distribuée** et des équipes multidisciplinaires.
+* **Concepts clés** :
+
+  * Domain-driven design appliqué à la donnée
+  * Data as a Product
+  * Self-serve data platform (plateformes en libre-service)
+  * Gouvernance fédérée (politiques globales + autonomie locale).
+* **Cas d’usage** : grandes organisations multi-domaines cherchant à éviter le “monolithe data”.
+* **Exemples d’implémentation** : sur Databricks, Snowflake, Azure Synapse + outils de gouvernance type Collibra, Alation.
+* **Avantage** : agilité, scalabilité organisationnelle.
+* **Limite** : complexité culturelle et organisationnelle (nécessite maturité data des équipes).
+
+</div>
+
+---
+
+### Introduction au Big Data
+
+##### 3️⃣ Comparaison : **Data Warehouse vs Data Lake vs Data Mesh**
+
+<div style="font-size:20px">
+
+
+| Aspect               | Data Warehouse             | Data Lake                           | Data Mesh                           |
+| -------------------- | -------------------------- | ----------------------------------- | ----------------------------------- |
+| **Architecture**     | Centralisée                | Centralisée (stockage brut)         | Décentralisée (par domaine)         |
+| **Schéma**           | Schema on Write            | Schema on Read                      | Variable (selon domaine)            |
+| **Types de données** | Structurées                | Tous types (structurées, semi, non) | Tous types                          |
+| **Cas d’usage**      | BI, reporting              | IA, ML, analyse exploratoire        | Gouvernance distribuée, scalabilité |
+| **Exemples**         | Oracle, BigQuery, Redshift | Hadoop, S3, Azure Data Lake         | Snowflake + gouvernance distribuée  |
+</div>
+
+---
+
+
 <!-- _class: lead -->
 <!-- _paginate: false -->
 
-## Surveillance d'infrastructure
+## Enjeux Stratégiques et Métier
 
 ---
 
-## Surveillance d'infrastructure
+## Enjeux Stratégiques et Métier
 
-<div style="font-size:35px">
-
-<br>
-
-- La surveillance des infrastructures avec Prometheus implique l’export de métriques système essentielles (CPU, disque, réseau, température, etc.), la découverte automatique de services, et l’intégration avec des environnements comme Kubernetes.
-- Prometheus peut aussi récupérer des métriques via divers protocoles (ICMP, TCP, HTTP, DNS) et interagir avec d’autres systèmes de monitoring pour centraliser les données.
-
-</div>
-
----
-
-## Surveillance d'infrastructure
-
-#### Noeud pour l’export des données système
-
-<br>
+#### Big Data est un levier stratégique (innovation, compétitivité, optimisation)
 
 <div style="font-size:25px">
 
-Le _Node Exporter_ est l’outil principal de Prometheus pour exporter des métriques système. Il expose des données sur :
+### 1) Trois leviers de valeur (cadre rapide à réutiliser)
 
-- **CPU** : utilisation totale, par cœur, par mode (idle, user, system).
-- **File system** : espace disque libre et utilisé, inodes.
-- **Disques de stockage** : latence d’E/S, nombre de lectures/écritures.
-- **Réseau** : débit entrant et sortant, erreurs, collisions.
-- **Température et ventilateurs** : si le matériel le supporte et si les capteurs sont configurés.
-
-Pour installer le _Node Exporter_, suivez les étapes de déploiement décrites précédemment. Assurez-vous qu’il tourne sur chaque machine à superviser pour collecter les données système.
+* **Innovation (croissance)** : nouveaux produits & services data-driven, modèles économiques (data sharing/marketplaces), expériences augmentées (perso, temps réel), “platformisation”.
+* **Compétitivité (différenciation)** : time-to-insight réduit, boucles d’apprentissage (A/B, bandits), effet réseau (plus d’utilisateurs = meilleure donnée = meilleur produit), barrières à l’entrée (coûts d’entraînement, données propriétaires).
+* **Optimisation (efficience)** : automatisation analytique/IA, prévision & allocation d’actifs, qualité opérationnelle (OEE, SLA), réduction des risques & pertes (fraude, défauts), compliance by design.
 
 </div>
 
 ---
 
-## Surveillance d'infrastructure
+## Enjeux Stratégiques et Métier
 
-#### Service Discovery avec Consul
+#### Big Data est un levier stratégique 
 
-<br>
+<div style="font-size:23px">
 
-<div style="font-size:35px">
+### 1) Trois leviers de valeur (cadre rapide à réutiliser)
 
-- Prometheus peut utiliser _Consul_ pour découvrir dynamiquement des services à superviser.
-- Cela permet de surveiller des services qui démarrent, arrêtent ou changent d’adresse sans modifier la configuration de Prometheus.
+#### Chaîne de valeur data (mémo)
 
-</div>
+**Ingestion → Stockage → Gouvernance → Traitements batch/stream → Feature store → Modèles/IA → Serving (API/BI) → Observabilité (DataOps/MLOps) → ROI/impact.**
 
----
+#### Indicateurs d’impact (à suivre systématiquement)
 
-## Surveillance d'infrastructure
+* **Innovation** : % CA de nouveaux produits data, NPS/CES, conversion nouvelle offre, temps idée→MVP.
+* **Compétitivité** : part de marché, coût d’acquisition (CAC), vitesse de déploiement (lead time), fréquence de release.
+* **Optimisation** : coût unitaire, OEE, délai moyen (lead time), taux d’erreur/retour, MTBF/MTTR, pertes évitées.
 
-#### Service Discovery avec Consul
 
-<br>
-
-<div style="font-size:20px">
-
-**Configurer Prometheus pour la découverte via Consul** :
-
-- Dans le fichier `prometheus.yml`, configurez le bloc `scrape_configs` pour qu’il utilise _Consul_ comme service de découverte :
-  ```yaml
-  scrape_configs:
-    - job_name: "consul_services"
-      consul_sd_configs:
-        - server: "localhost:8500" # Adresse du serveur Consul
-          services: [] # Liste des services à superviser, ou laissez vide pour tout superviser
-      relabel_configs:
-        - source_labels: [__meta_consul_service]
-          target_label: job
-  ```
-- **Relabeling** : Les `relabel_configs` permettent de renommer les labels issus de Consul pour structurer les métriques dans Prometheus.
-
-**Consul** collecte et actualise automatiquement les informations sur les services enregistrés, ce qui évite d’avoir à gérer manuellement la liste des cibles dans Prometheus.
 
 </div>
 
 ---
 
-## Surveillance d'infrastructure
+## Enjeux Stratégiques et Métier
 
-#### Récupérer les métriques de Kubernetes
+#### Big Data est un levier stratégique 
 
-<br>
+<div style="font-size:25px">
+
+### 2) Secteurs impactés – modules “prêts à déployer”
+
+### A. Santé (médecine personnalisée, génomique)
+
+**Objectifs stratégiques**
+
+* Passer du “moyen” au **personnalisé** (protocoles, dosage, suivi).
+* **Prédire** les risques (sepsis, réadmission 30j), optimiser le **parcours patient**.
+* Accélérer la **recherche clinique** (cohorte/éligibilité, RWE).
+
+**Données & flux**
+
+* Dossiers patients (EHR/EMR), HL7/FHIR, imagerie (DICOM), notes cliniques (NLP), **omiques** (génomique, transcriptomique), dispositifs connectés (IoMT), pharmacovigilance.
+* Contraintes : **RGPD**, consentement, pseudonymisation, minimisation, traçabilité d’accès.
+
+</div>
+
+---
+
+## Enjeux Stratégiques et Métier
+
+#### Big Data est un levier stratégique 
+
+<div style="font-size:25px">
+
+### 2) Secteurs impactés – modules “prêts à déployer”
+
+### A. Santé (médecine personnalisée, génomique)
+
+**Cas d’usage phares**
+
+* **Score de risque** (réadmission, sepsis) : modèles survie, gradient boosting, deep tabular.
+* **NLP clinique** (extraction concepts SNOMED/ICD), **résumés** automatiques.
+* **Imagerie** (détection lésions) : CNN/transformers.
+* **Médecine personnalisée** : variants génétiques → protocole (règles + ML).
+* **Planification hôpital** : prévisions lit/OR, optimisation bloc.
+
+</div>
+
+---
+
+## Enjeux Stratégiques et Métier
+
+#### Big Data est un levier stratégique 
+
+<div style="font-size:25px">
+
+### 2) Secteurs impactés – modules “prêts à déployer”
+
+### A. Santé (médecine personnalisée, génomique)
+
+**KPIs & ROI**
+
+* -X% réadmissions, -X h délai diagnostic, +X% inclusion essais, conformité audit FHIR/consent.
+* Architecture de référence : **ingestion FHIR + data lake chiffré + Delta/Iceberg + NLP/vision + MLOps (drift clinique)**.
+
+**Risques & contrôles**
+
+* Biais (population non représentée), explicabilité (SHAP/LIME), **fédéré** (FL) pour données sensibles, gouvernance d’accès clinicien/chercheur.
+</div>
+
+---
+
+## Enjeux Stratégiques et Métier
+
+#### Big Data est un levier stratégique 
+
+<div style="font-size:25px">
+
+### 2) Secteurs impactés – modules “prêts à déployer”
+
+### B. Banque / Finance (fraude, scoring)
+
+**Objectifs**
+
+* **Réduire pertes** (fraude, défaut), **accélérer** on-boarding (KYC), **personnaliser** l’offre (next-best-action), respecter AML/PSD2/Bâle.
+
+**Données**
+
+* Transactions cartes & virement, KYC/CRS, logs canaux, open banking (API PSD2), graphes relations (comptes, bénéficiaires), données externes (bureaux de crédit).
+
+</div>
+
+---
+
+## Enjeux Stratégiques et Métier
+
+#### Big Data est un levier stratégique 
+
+<div style="font-size:25px">
+
+### 2) Secteurs impactés – modules “prêts à déployer”
+
+### B. Banque / Finance (fraude, scoring)
+
+**Cas d’usage**
+
+* **Fraude temps réel** (streaming Kafka/Flink, features glissantes) + **graph analytics** (communautés/chemins).
+* **Scoring crédit** (GBMs/autoML, fairness), **limites dynamiques**.
+* **AML** (détection schémas, réseau), **priorisation alertes**.
+* **Segmentation valeur/CLV**, **prix dynamique**.
+
+</div>
+
+---
+
+## Enjeux Stratégiques et Métier
+
+#### Big Data est un levier stratégique 
+
+<div style="font-size:23px">
+
+### 2) Secteurs impactés – modules “prêts à déployer”
+
+### B. Banque / Finance (fraude, scoring)
+
+**KPIs**
+
+* Capture de fraude (recall) ↑, **false positives** ↓, délai décision carte < 50 ms, coût conformité ↓, temps KYC ↓.
+
+**Architecture**
+
+* **Event streaming** + feature store **on-line/off-line**, modèles servés en **low latency**, auditabilité (versioning jeux/poids), **explanations**.
+
+**Risques**
+
+* Biais discriminatoires (genre, origine), détournements adversariaux, gouvernance modèle (validation indépendante), régulation (EBA/ACPR).
+
+</div>
+
+---
+
+## Enjeux Stratégiques et Métier
+
+#### Big Data est un levier stratégique 
+
+<div style="font-size:21px">
+
+### 2) Secteurs impactés – modules “prêts à déployer”
+
+#### C. Industrie 4.0 (IoT, maintenance prédictive)
+
+**Objectifs**
+
+* **OEE↑**, arrêts non planifiés ↓, **rendement matière** ↑, énergie ↓, fiabilité & sécurité.
+
+**Données**
+
+* Capteurs temps réel (vibration, température), SCADA/MES/ERP, **OPC-UA**, MQTT, logs qualité, vision (défauts).
+
+**Cas d’usage**
+
+* **Maintenance prédictive** (prognostics & health management) : séries temporelles, survival analysis, remaining useful life.
+* **Détection défauts** (vision), **process mining**, **jumeau numérique** (digital twin).
+* **Optimisation énergie** (prévision charge, arbitrage).
+
+</div>
+
+---
+
+## Enjeux Stratégiques et Métier
+
+#### Big Data est un levier stratégique 
+
+<div style="font-size:25px">
+
+### 2) Secteurs impactés – modules “prêts à déployer”
+
+#### C. Industrie 4.0 (IoT, maintenance prédictive)
+
+**KPIs**
+
+* MTBF↑, MTTR↓, arrêts ↓, scrap ↓, consommation kWh/u ↓, TRS/OEE ↑.
+
+**Architecture**
+
+* **Edge computing** (prétraitement), bus temps réel, **data lake/lakehouse** industriel, MLOps avec surveillance **drift sensoriel**, boucle vers **MES/PLC**.
+
+**Risques**
+
+* Sécurité OT (segmentation réseau), intégration legacy, latence, cybersécurité (IEC 62443).
+
+</div>
+
+---
+
+## Enjeux Stratégiques et Métier
+
+#### Big Data est un levier stratégique 
 
 <div style="font-size:22px">
 
-Pour collecter les métriques de Kubernetes, Prometheus est souvent configuré pour surveiller des composants Kubernetes critiques et les applications tournant dans le cluster.
-<br>
+### 2) Secteurs impactés – modules “prêts à déployer”
 
-**Prometheus Operator pour Kubernetes** :
+#### D. Smart Cities (trafic, énergie, urbanisme)
 
-- L’_Operator_ de Prometheus simplifie le déploiement et la configuration de Prometheus dans Kubernetes. Il configure les _ServiceMonitors_ et les _PodMonitors_, qui définissent quels services et pods superviser.
-- Installez le _Prometheus Operator_ en utilisant Helm :
+**Objectifs**
 
-       ```bash
-       helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
-       helm install prometheus prometheus-community/kube-prometheus-stack
-       ```
+* Fluidité mobilité, **sobriété énergétique**, qualité de l’air, sécurité, services proactifs.
 
-  </div>
+**Données**
+
+* Boucles inductives, caméras (vision/edge), IoT environnement, smart meters, **open data**, mobile traces, météo.
+
+**Cas d’usage**
+
+* **Contrôle trafic** dynamique (coordination feux, prédiction flux).
+* **Gestion énergie** (prévision consommation/production renouvelable, effacement).
+* **Sécurité urbaine** (anomalies vidéo respect privacy).
+* **Urbanisme** data-driven (jumeau numérique territoire).
+</div>
 
 ---
 
-## Surveillance d'infrastructure
+## Enjeux Stratégiques et Métier
 
-#### Récupérer les métriques de Kubernetes
+#### Big Data est un levier stratégique 
 
-<div style="font-size:20px">
+<div style="font-size:25px">
 
-**Exemple de ServiceMonitor** :
+### 2) Secteurs impactés – modules “prêts à déployer”
 
-- Un _ServiceMonitor_ est une ressource Kubernetes spécifique qui définit les services Kubernetes à surveiller.
-- Exemple de `ServiceMonitor` pour superviser un service `my-service` dans le namespace `my-namespace` :
+#### D. Smart Cities (trafic, énergie, urbanisme)
 
-```yaml
-apiVersion: monitoring.coreos.com/v1
-kind: ServiceMonitor
-metadata:
-  name: my-service-monitor
-  namespace: my-namespace
-spec:
-  selector:
-    matchLabels:
-      app: my-service
-  namespaceSelector:
-    matchNames:
-      - my-namespace
-  endpoints:
-    - port: http
-      interval: 15s
-```
+**KPIs**
+
+* Temps trajet ↓, émissions NOx/CO₂ ↓, pics énergie aplatis, satisfaction citoyens ↑.
+
+**Architecture**
+
+* **Edge + stream** (latence), data mesh inter-directions (mobilité/énergie/propreté), gouvernance éthique (privacy zone-based, floutage on-device).
+
+**Risques**
+
+* Vie privée/surveillance, dépendance fournisseurs, interopérabilité (standards, API publiques).
 
 </div>
 
 ---
 
-## Surveillance d'infrastructure
 
-#### Outils d’export pour les protocoles ICMP, TCP, HTTP et DNS
+## Enjeux Stratégiques et Métier
 
-<br>
+#### Big Data est un levier stratégique 
 
-<div style="font-size:35px">
+<div style="font-size:25px">
 
-Le _Blackbox Exporter_ de Prometheus permet de vérifier la disponibilité et la latence de services via divers protocoles (ICMP, TCP, HTTP, DNS) en exécutant des tests actifs.
+### 2) Secteurs impactés – modules “prêts à déployer”
 
-</div>
+#### E. Retail & e-commerce (reco, personnalisation)
 
----
+**Objectifs**
 
-## Surveillance d'infrastructure
+* **Conversion** ↑, panier moyen ↑, **stock** optimisé, churn ↓, marges ↑.
 
-#### Outils d’export pour les protocoles ICMP, TCP, HTTP et DNS
+**Données**
 
-<div style="font-size:20px">
-
-**Installation du Blackbox Exporter** :
-
-- Exemple de configuration de `prometheus.yml` pour surveiller un service HTTP et un point ICMP :
-  ```yaml
-  scrape_configs:
-    - job_name: "blackbox_http"
-      metrics_path: /probe
-      params:
-        module: [http_2xx] # Définir le module HTTP
-      static_configs:
-        - targets:
-            - "http://example.com"
-      relabel_configs:
-        - source_labels: [__address__]
-          target_label: __param_target
-        - target_label: instance
-          replacement: "example.com"
-      metric_relabel_configs:
-        - source_labels: [__name__]
-          regex: "probe_*"
-          action: drop
-  ```
+* Clickstream, paniers, catalogue/attributs, CRM, campagnes, avis, logistique, prix concurrents.
 
 </div>
 
 ---
 
-## Surveillance d'infrastructure
+## Enjeux Stratégiques et Métier
 
-#### Outils d’export pour les protocoles ICMP, TCP, HTTP et DNS
+#### Big Data est un levier stratégique 
+
+<div style="font-size:25px">
+
+### 2) Secteurs impactés – modules “prêts à déployer”
+
+#### E. Retail & e-commerce (reco, personnalisation)
+
+**Cas d’usage**
+
+* **Recommandations** (collaboratif, content-based, session-based, graph).
+* **Personnalisation** omnicanale (ranking, bandits contextuels).
+* **Forecast** demande (saisonnalité, promos), **prix dynamique**, **churn**.
+* **Attribution** multicanale, **optimisation promo**.
+
+**KPIs**
+
+* CTR/CR ↑, AOV ↑, rupture ↓, démarque inconnue ↓, LTV/CAC ↑, uplift promo ↑.
+
+</div>
+
+---
+
+## Enjeux Stratégiques et Métier
+
+#### Big Data est un levier stratégique 
+
+<div style="font-size:28px">
+
+### 2) Secteurs impactés – modules “prêts à déployer”
+
+#### E. Retail & e-commerce (reco, personnalisation)
+
+**Architecture**
+
+* Event streaming, **feature store**, moteurs de **ranking** online, A/B/n, MLOps (shadow/canary), BI temps réel.
+
+**Risques**
+
+* “Filter bubble”, fairness (exposition vendeurs), conformité cookies/consent, robustesse aux attaques (scraping, fraude avis).
+
+</div>
+
+---
+
+## Enjeux Stratégiques et Métier
+
+#### Big Data est un levier stratégique 
+
+<div style="font-size:27px">
+
+### 3) Modèles d’architecture réutilisables (templates)
+
+**Pipeline générique “temps réel + batch”**
+
+* **Ingestion** : Kafka/Flink (events), CDC/ELT (batch).
+* **Stockage** : Data Lake(Lakehouse) + Warehouse (serving BI).
+* **Traitement** : Spark/Flink + orchestrateur (Airflow/DBX).
+* **Gouvernance** : catalogue (lineage, PII), politiques d’accès (ABAC).
+* **ML** : feature store (off-line/on-line), registry modèles, MLOps (CI/CD, drift, canary).
+* **Serving** : APIs faibles latences, dashboards, reverse ETL.
+* **Observabilité** : test données (DQ), SLO pipelines, coût FinOps (tagging).
+
+</div>
+
+---
+
+## Enjeux Stratégiques et Métier
+
+#### Big Data est un levier stratégique 
+
+<div style="font-size:27px">
+
+### 4) Méthode d’identification & priorisation des cas d’usage (prête à l’emploi)
+
+* **Backlog**: pour chaque idée → *Impact business* (€, KPI), *Faisabilité* (données, technique, change), *Dépendances*, *Risques* (juridiques/éthiques).
+* **Scoring** (1–5) et matrice **Impact × Faisabilité** → quick wins (T0–T3 mois), core bets (T3–T12), explorations (>12).
+* **Business case**: Bénéfices annuels – (Data/Cloud/Opex + Change) → **ROI** & **Payback**; définir **North Star Metric** et **leading indicators**.
+
+</div>
+
+---
+
+## Enjeux Stratégiques et Métier
+
+### Impact sur le métier du Chief Data Officer (CDO)
+
+<div style="font-size:27px">
+
+## 1) Mandat & périmètre
+
+* **Vision & stratégie data** alignée aux OKR d’entreprise (offensive vs défensive).
+* **Gouvernance** (comités, politiques PII/RGPD, qualité, access management).
+* **Plateformes & outillage** (data platform, lakehouse, catalogue, MLOps, sécurité).
+* **Data as a Product** : instaurer le **data mesh** (si pertinent), définir standards cross-domain.
+* **Monétisation & partenariats** : data sharing, marketplaces, API produits.
+* **Éthique & conformité** : privacy by design, fairness, auditabilité modèles.
+</div>
+
+---
+
+## Enjeux Stratégiques et Métier
+
+### Impact sur le métier du Chief Data Officer (CDO)
+
+<div style="font-size:27px">
+
+## 2) Operating model (organisation)
+
+* **Hub & Spoke** : une équipe centrale (standards, plateforme, sécurité, MLOps) + équipes **domaines** (produits data).
+* Rôles clés : **Data Product Owner**, Data Engineer, ML Engineer, Data Scientist, Analytics Engineer, Steward, Architecte Data/Sécu.
+* **Compétences** : cloud/data, ML, produit, change management, finance/FinOps, juridique (RGPD/contrats).
+
+</div>
+
+---
+
+## Enjeux Stratégiques et Métier
+
+### Impact sur le métier du Chief Data Officer (CDO)
+
+<div style="font-size:27px">
+
+## 3) Cadre de gouvernance
+
+* **Data Contracts** entre domaines, SLA/SLO (fraîcheur, complétude, disponibilité).
+* **Catalogue & lineage** obligatoires (découvrabilité).
+* **Qualité** : tests auto (Great Expectations/DBT tests), seuils d’alerte.
+* **Sécurité** : classification PII/PHI, chiffrement, masquage dynamique, **least privilege**.
+* **Modèles** : registre, validation indépendante, **model risk management**, traçabilité des features/versions.
+
+</div>
+
+---
+
+## Enjeux Stratégiques et Métier
+
+### Impact sur le métier du Chief Data Officer (CDO)
 
 <div style="font-size:24px">
 
-**Installation du Blackbox Exporter** :
+## 4) Feuille de route “100 jours” (exécutable)
 
-- Exemple de configuration de `prometheus.yml` pour surveiller un service HTTP et un point ICMP (**_suite_**) :
-  ```yaml
-  - job_name: "blackbox_icmp"
-    metrics_path: /probe
-    params:
-      module: [icmp] # Définir le module ICMP
-    static_configs:
-      - targets:
-          - "192.168.1.1"
-    relabel_configs:
-      - source_labels: [__address__]
-        target_label: __param_target
-      - target_label: instance
-        replacement: "192.168.1.1"
-  ```
+1. **Semaine 1–2** : audit de maturité (données, équipes, outils, use-cases), cartographie sources/PII, risques.
+2. **Sem. 3–4** : définir **North Star** + 5 KPIs d’entreprise; charte data; comité de gouvernance.
+3. **Sem. 5–8** : cadrer 3 **quick wins** (1 par levier : innovation/compétitivité/optimisation) avec business case, data contract, plan MLOps.
+4. **Sem. 9–12** : lancer plateforme minimale (ingestion, lakehouse, catalogue, CI/CD data), déployer **1 modèle** en production (pilot), mettre en place observabilité & coûts (FinOps).
+5. **Livrables** : standard de nommage, modèles d’ABAC, modèle de data product, RACI & processus d’accès.
 
 </div>
 
 ---
 
-## Surveillance d'infrastructure
+## Enjeux Stratégiques et Métier
 
-#### Récupérer des données depuis d’autres systèmes de monitoring
+### Impact sur le métier du Chief Data Officer (CDO)
 
-<div style="font-size:16px">
+<div style="font-size:24px">
 
-Prometheus peut agréger des métriques provenant de différents systèmes de monitoring, tels que _Graphite_, _InfluxDB_, et d'autres instances Prometheus, grâce aux mécanismes suivants :
+## 5) KPIs du CDO (tableau de bord)
 
-- **Remote Read/Write** : Prometheus permet l'envoi (`remote_write`) et la récupération (`remote_read`) de métriques vers et depuis d'autres systèmes.
-- **Federation** : La fédération Prometheus permet d’agréger les données de plusieurs serveurs Prometheus dans une instance principale.
-  ```yaml
-  scrape_configs:
-    - job_name: "federate"
-      honor_labels: true
-      metrics_path: "/federate"
-      params:
-        match[]:
-          - '{job="node"}'
-      static_configs:
-        - targets:
-            - "remote-prometheus-server:9090"
-  ```
-- **Exporters spécifiques** : Certains exporters tiers sont conçus pour extraire des données d’autres outils de monitoring. Par exemple : - _InfluxDB Exporter_ pour InfluxDB. - _Graphite Exporter_ pour Graphite.
+* **Adoption** : nb utilisateurs actifs (BI/DS), % domaines publiant des data products.
+* **Time-to-Value** : délai idée→MVP, cycles A/B.
+* **Qualité** : incidents DQ/mois, % datasets avec SLA respecté.
+* **Économie** : coût/Go, coût par requête, waste cloud ↓, ROI use-cases.
+* **Conformité** : audits réussis, temps de réponse aux demandes RGPD (AIPD, droit d’accès).
 </div>
 
 ---
-
-## Surveillance d'infrastructure
-
-#### Connexion avec Grafana pour la visualisation
-
-<br>
-
-<div style="font-size:22px">
-
-**Grafana** peut se connecter directement à **Prometheus** pour fournir des visualisations riches et personnalisées des métriques d’infrastructure.
-
-- **Ajouter Prometheus comme source de données** : Dans Grafana, accédez à **Configuration > Data Sources**, ajoutez Prometheus en tant que source de données, et entrez l’URL de Prometheus (ex. `http://localhost:9090`).
-- **Créer des tableaux de bord personnalisés** : Créez des panneaux (panels) pour visualiser les métriques collectées, avec des requêtes PromQL pour filtrer, agréger, et manipuler les données.
-- **Exemples de requêtes** : 
-  - **Utilisation CPU moyenne** : `avg(rate(node_cpu_seconds_total{mode="user"}[5m])) by (instance)` 
-  - **Espace disque disponible** : `node_filesystem_avail_bytes{fstype!="tmpfs"}` 
-  - **Latence réseau** : `rate(node_network_receive_bytes_total[5m])`
-</div>
-
----
-
-## Surveillance d'infrastructure
-
-## Travaux pratiques
-
-<div style="font-size:35px">
-
-<center>
-
-# Démonstration de création d’un exporter
-
-</center>
-
-</div>
-
----
-
 
 <!-- _class: lead -->
 <!-- _paginate: false -->
 
-## PromQL
+## Architecture Big Data
 
 ---
 
-## PromQL
+## Architecture et Technologies du Big Data
 
-#### Présentation de PromQL
-
-<br>
-
-<div style="font-size:30px">
-
-**PromQL** (Prometheus Query Language) est le langage de requête de Prometheus, utilisé pour interroger et manipuler les métriques collectées. PromQL permet d'extraire, filtrer, agréger, et analyser les données, facilitant ainsi la création de tableaux de bord et de règles d'alerte basés sur les métriques.
-
-</div>
-
----
-
-## PromQL
-
-#### Présentation de PromQL
-
-<br>
-
-<div style="font-size:23px">
-
-PromQL est conçu pour traiter les séries temporelles, qui sont des données métriques collectées dans le temps. Il permet de :
-
-1. **Sélectionner des séries temporelles** : Filtrer des métriques basées sur des noms de métriques et des labels.
-2. **Faire des calculs sur les séries temporelles** : Agrégation, opérations mathématiques, et fonctions statistiques.
-3. **Créer des alertes** : Formuler des règles pour surveiller les tendances et anomalies.
-
-Exemple de requête de base pour obtenir une métrique brute :
-
-```promql
-http_requests_total{status="200"}
-```
-
-</div>
-
----
-
-## PromQL
-
-#### Agrégation des données
-
-<br>
-
-<div style="font-size:23px">
-
-Les opérations d'agrégation sont utilisées pour combiner plusieurs séries temporelles en une seule, en fonction des valeurs d’une métrique ou de groupes de labels. Les principales fonctions d’agrégation sont les suivantes :
-
-- **sum** : Somme de toutes les valeurs.
-  ```promql
-  sum(http_requests_total)
-  ```
-- **count** : Compte le nombre de séries ou de points de données.
-  ```promql
-  count(http_requests_total)
-  ```
-- **avg** : Moyenne des valeurs.
-  ```promql
-  avg(http_requests_total)
-  ```
-
-</div>
-
----
-
-## PromQL
-
-#### Agrégation des données
-
-<br>
+### L’Architecture du Big Data
 
 <div style="font-size:27px">
 
-- **min** : Valeur minimum.
-  ```promql
-  min(http_requests_total)
-  ```
-- **max** : Valeur maximum.
-  ```promql
-  max(http_requests_total)
-  ```
-- **quantile** : Calcule un quantile spécifique (ex. 95ème centile).
-  ```promql
-  quantile(0.95, http_request_duration_seconds)
-  ```
+### 1️⃣ Principes fondamentaux
 
+* **Scalabilité horizontale** : ajout de nœuds/serveurs standards plutôt que des machines très coûteuses.
+* **Tolérance aux pannes** : réplication des données → disponibilité garantie.
+* **Traitement distribué** : les calculs sont envoyés là où se trouvent les données.
+* **Polyglot persistence** : utiliser différents types de bases selon les cas (SQL, NoSQL, graph, colonnes…).
+* **Temps réel + batch** : combiner analyse historique et analyse instantanée.
 </div>
 
 ---
 
-## PromQL
+### Architecture et Technologies du Big Data
 
-#### Agrégation des données
-
-<br>
-
-<div style="font-size:30px">
-
-Ces fonctions peuvent être utilisées avec des clauses `by` ou `without` pour regrouper ou exclure des séries temporelles par label. Par exemple :
-
-```promql
-sum(http_requests_total) by (status)
-```
-
-Cette requête regroupe les requêtes HTTP par `status` et calcule la somme pour chaque statut HTTP.
-
-</div>
-
----
-
-## PromQL
-
-#### Groupement des données
-
-<br>
-
-<div style="font-size:23px">
-
-Le **groupement** permet d’organiser et de segmenter les données en utilisant les labels. En utilisant les clauses `by` et `without`, PromQL peut regrouper ou exclure des séries temporelles basées sur certains labels :
-
-- **by** : Regroupe les séries temporelles selon les labels spécifiés.
-
-  ```promql
-  sum(rate(http_requests_total[5m])) by (status)
-  ```
-
-  Ici, la somme des requêtes est calculée et regroupée par `status`.
-
-- **without** : Exclut les labels spécifiés du groupement.
-  ```promql
-  avg(rate(cpu_usage_seconds_total[5m])) without (cpu)
-  ```
-  Cette requête calcule la moyenne de l’utilisation CPU en excluant le label `cpu`.
-
-</div>
-
----
-
-## PromQL
-
-#### Les intervalles de temps
-
-<br>
-
-<div style="font-size:19px">
-
-Les intervalles dans PromQL spécifient la période pendant laquelle les métriques doivent être calculées. On peut ainsi analyser les valeurs récentes ou historiques, ou appliquer des fonctions comme `rate` sur une période donnée.
-
-- **Syntaxe des intervalles** : `[5m]`, `[1h]`, `[24h]` pour des périodes de 5 minutes, 1 heure, et 24 heures respectivement.
-
-- **Exemples d'utilisation des intervalles** :
-  - **rate** : Calcule le taux moyen de croissance par seconde pour les compteurs sur une période donnée.
-    ```promql
-    rate(http_requests_total[5m])
-    ```
-  - **increase** : Mesure l’augmentation totale d'un compteur sur une période.
-    ```promql
-    increase(http_requests_total[1h])
-    ```
-  - **avg_over_time** : Moyenne des valeurs d'une métrique sur une période.
-    ```promql
-    avg_over_time(cpu_usage_seconds_total[10m])
-    ```
-
-</div>
-
----
-
-## PromQL
-
-#### Opérateurs d'agrégation (sum, count, avg, min, max, quantile)
-
-<br>
-
-<div style="font-size:23px">
-
-Ces fonctions d’agrégation permettent de calculer des statistiques à partir des séries temporelles :
-
-- **sum** : Combine toutes les valeurs d’une métrique.
-- **count** : Compte le nombre de points de données ou de séries.
-- **avg** : Moyenne de toutes les valeurs.
-- **min** et **max** : Minimum et maximum.
-- **quantile** : Calcule un quantile, comme le 95ème centile, utilisé pour des analyses de performance.
-
-Par exemple :
-
-```promql
-sum(rate(http_requests_total[5m])) by (instance)
-```
-
-</div>
-
----
-
-## PromQL
-
-#### Les opérateurs binaires
-
-<br>
-
-<div style="font-size:18px">
-
-Les **opérateurs binaires** permettent d’effectuer des calculs entre deux séries temporelles ou entre une série temporelle et une valeur constante. Les opérateurs binaires comprennent les opérateurs arithmétiques (`+`, `-`, `*`, `/`), de comparaison (`==`, `!=`, `>`, `<`, `>=`, `<=`), et les opérateurs logiques (`and`, `or`, `unless`).
-
-Exemple de requêtes utilisant des opérateurs binaires :
-
-- **Addition** :
-
-  ```promql
-  http_requests_total + http_errors_total
-  ```
-
-- **Division** :
-
-  ```promql
-  http_requests_total / http_errors_total
-  ```
-
-- **Comparaison** :
-  ```promql
-  http_errors_total > 100
-  ```
-
-Les opérateurs peuvent aussi être utilisés avec des modificateurs `on` ou `ignoring` pour spécifier les labels à considérer ou ignorer.
-
-</div>
-
----
-
-## PromQL
-
-#### Les fonctions
-
-<br>
-
-<div style="font-size:25px">
-
-PromQL offre plusieurs fonctions pour manipuler les séries temporelles. Voici les plus courantes :
-
-- **rate()** : Calcule le taux moyen de changement pour un compteur.
-
-  ```promql
-  rate(http_requests_total[5m])
-  ```
-
-- **increase()** : Calcule l’augmentation totale d’un compteur.
-
-  ```promql
-  increase(http_requests_total[1h])
-  ```
-
-- **irate()** : Taux instantané de changement (pour les pics rapides).
-  ```promql
-  irate(http_requests_total[5m])
-  ```
-  </div>
-
----
-
-## PromQL
-
-#### Les fonctions
-
-<br>
-
-<div style="font-size:23px">
-
-- **avg_over_time()** : Moyenne des valeurs sur une période de temps.
-
-  ```promql
-  avg_over_time(cpu_usage_seconds_total[10m])
-  ```
-
-- **max_over_time() / min_over_time()** : Valeurs maximales et minimales sur une période.
-
-  ```promql
-  max_over_time(cpu_usage_seconds_total[10m])
-  ```
-
-- **delta()** : Calcule le changement de valeur sur une période pour les métriques non-compteurs.
-
-  ```promql
-  delta(memory_usage_bytes[5m])
-  ```
-
-- **histogram_quantile()** : Calcule le quantile pour les séries d'histogramme.
-  ```promql
-  histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[5m]))
-  ```
-  </div>
-
----
-
-## PromQL
-
-#### Exemples combinés de requêtes PromQL
-
-<br>
-
-<div style="font-size:23px">
-
-1. **Calcul du taux d’erreurs HTTP par instance** :
-
-   ```promql
-   rate(http_errors_total[5m]) by (instance)
-   ```
-
-2. **Moyenne d’utilisation CPU par cluster en excluant le label `cpu`** :
-
-   ```promql
-   avg(rate(cpu_usage_seconds_total[5m])) without (cpu)
-   ```
-
-3. **Quantile 95 des temps de réponse HTTP** :
-
-   ```promql
-   histogram_quantile(0.95, sum(rate(http_request_duration_seconds_bucket[5m])) by (le))
-   ```
-
-4. **Alertes sur les erreurs critiques** :
-   ```promql
-   count(http_errors_total{severity="critical"}) by (instance) > 0
-   ```
-
-</div>
-
----
-## PromQL
-
-## Travaux pratiques
-
-<div style="font-size:39px">
-
-<center>
-
-# Écrire et tester des requêtes PromQL
-
-</center>
-
-</div>
-
----
-
-<!-- _class: lead -->
-<!-- _paginate: false -->
-
-## Les règles d'enregistrement
-
----
-
-## Les règles d'enregistrement
-
-#### Présentation des règles d'enregistrement
-
-<br>
-
-<div style="font-size:30px">
-
-Les **règles d'enregistrement** (ou **recording rules**) dans Prometheus permettent de pré-calculer et d'enregistrer des métriques dérivées de celles qui sont collectées en continu. Ces règles facilitent le traitement des données en réduisant la quantité de calculs à effectuer lors de la requête, améliorant ainsi les performances et permettant de gérer plus efficacement de grandes quantités de données.
-
-</div>
-
----
-
-## Les règles d'enregistrement
-
-#### Présentation des règles d'enregistrement
-
-<br>
-
-<div style="font-size:35px">
-
-- Une **règle d’enregistrement** permet de définir une expression PromQL complexe et de la stocker sous un nouveau nom de métrique, simplifiant ainsi les futures requêtes.
-- En gros, elle transforme une requête complexe et coûteuse en une métrique plus accessible et rapide à interroger.
-
-</div>
-
----
-
-## Les règles d'enregistrement
-
-#### Exemple de règle d'enregistrement
-
-<br>
-
-<div style="font-size:23px">
-
-Par exemple, imaginons que nous souhaitions surveiller la charge CPU moyenne de chaque instance sur 5 minutes. Plutôt que d'exécuter la requête suivante chaque fois que nous en avons besoin :
-
-```promql
-avg(rate(cpu_usage_seconds_total[5m])) by (instance)
-```
-
-Nous créons une règle d'enregistrement qui stocke ce calcul sous un nouveau nom de métrique :
-
-```yaml
-groups:
-  - name: cpu.rules
-    rules:
-      - record: instance_cpu_usage:rate5m
-        expr: avg(rate(cpu_usage_seconds_total[5m])) by (instance)
-```
-
-Cette règle enregistre la valeur sous le nom `instance_cpu_usage:rate5m`, que nous pouvons ensuite interroger directement, sans recalculer les valeurs.
-
-</div>
-
----
-
-## Les règles d'enregistrement
-
-#### Diminution des données avec les règles d’enregistrement
-
-<br>
-
-<div style="font-size:22px">
-
-Les règles d'enregistrement permettent de réduire la quantité de données calculées dynamiquement, diminuant ainsi la charge sur Prometheus. Elles sont utiles pour :
-
-1. **Les calculs fréquents** : Les règles d'enregistrement permettent de pré-calculer des métriques complexes ou fréquemment interrogées, ce qui réduit le temps de réponse pour les requêtes futures.
-2. **Les métriques agrégées** : Enregistrer des valeurs agrégées (moyennes, sommes, etc.) sur des périodes courtes ou longues réduit la quantité de données à manipuler, surtout si on n’a pas besoin de la granularité des données d’origine.
-
-3. **Les longues périodes de rétention** : Lorsqu’on a besoin d’analyser les tendances historiques sur le long terme, les règles d’enregistrement peuvent réduire les données stockées en agrégeant les métriques pour qu’elles occupent moins d’espace.
-
-</div>
-
----
-
-## Les règles d'enregistrement
-
-#### Diminution des données avec les règles d’enregistrement
-
-<div style="font-size:23px">
-
-#### Exemple de réduction de données
-
-<br>
-
-Supposons que nous voulons surveiller le nombre total de requêtes HTTP sur chaque service toutes les 5 minutes. Plutôt que d’interroger la métrique brute `http_requests_total` avec un agrégat de 5 minutes, nous pouvons créer une règle d'enregistrement pour stocker cette valeur :
-
-```yaml
-groups:
-  - name: http.rules
-    rules:
-      - record: service:http_requests:total5m
-        expr: sum(rate(http_requests_total[5m])) by (service)
-```
-
-Ainsi, `service:http_requests:total5m` contiendra le taux de requêtes par service pour chaque intervalle de 5 minutes, réduisant la quantité de calcul lors de la visualisation ou des alertes.
-
-</div>
-
----
-
-## Les règles d'enregistrement
-
-#### Bonnes pratiques pour les règles d'enregistrement
+#### L’Architecture du Big Data
 
 <div style="font-size:20px">
 
-1. **Utilisez des noms de métriques explicites** : Utilisez des noms clairs et structurés pour les métriques enregistrées, suivant le format `namespace:nom_métrique:intervalle` pour une meilleure lisibilité. Exemple : `instance_cpu_usage:rate5m`.
+## 2️⃣ Les différentes couches de l’architecture Big Data
 
-2. **Utilisez des intervalles cohérents** : Les règles d’enregistrement doivent utiliser des intervalles de temps logiques et cohérents, comme 5 minutes (`5m`), 15 minutes (`15m`), ou 1 heure (`1h`). Cela simplifie la compréhension des résultats.
+### 🔹 1. Sources de données
 
-3. **Évitez l'enregistrement de règles trop spécifiques** : Les règles d’enregistrement doivent être utilisées pour les agrégations fréquentes ou les métriques clés. Trop de règles spécifiques peuvent augmenter la charge sur le stockage et complexifier l’architecture de supervision.
+* **Internes** : ERP, CRM, logs serveurs, transactions bancaires, données capteurs (IoT).
+* **Externes** : open data, réseaux sociaux, données partenaires, APIs, web scraping.
+* **Caractéristiques** : hétérogènes, massives, flux continu + historiques.
 
-4. **Ne pas dupliquer les données** : Enregistrez uniquement les règles nécessaires, surtout si elles répliquent des données déjà disponibles sous une autre forme.
+### 🔹 2. Ingestion des données
 
-5. **Évitez les expressions coûteuses** : N’utilisez pas de règles d'enregistrement pour des calculs intensifs qui changent rarement. Priorisez les calculs dynamiques ou réservez les règles pour les métriques consultées régulièrement.
-</div>
+* Objectif : **collecter et transporter** les données vers le système central.
+* **Technologies** :
 
----
-
-## Les règles d'enregistrement
-
-#### Vecteurs dans les règles d'enregistrement
-
-<div style="font-size:19px">
-
-Les **vecteurs** dans PromQL représentent des séries temporelles à un instant donné. Il existe deux types de vecteurs :
-
-1. **Vecteurs instantanés** : Ce sont des séries temporelles qui contiennent une seule valeur pour chaque série à un instant précis. Exemple :
-
-   ```promql
-   http_requests_total
-   ```
-
-   Ce vecteur instantané fournit la dernière valeur de la métrique `http_requests_total` pour chaque série temporelle unique (par exemple, chaque combinaison de labels).
-
-2. **Vecteurs de tranches de temps (ranges)** : Ce sont des séries temporelles contenant plusieurs points de données sur une période donnée. Exemple :
-   ```promql
-   rate(http_requests_total[5m])
-   ```
-   Ici, le vecteur de tranche de temps `[5m]` spécifie que nous voulons les valeurs pour une période de 5 minutes.
-
-Les règles d’enregistrement utilisent souvent des vecteurs de tranches de temps pour agrémenter des intervalles de temps spécifiques. Cela permet de capturer des tendances et de réduire les données en préservant l’historique pertinent.
+  * **Batch** : ingestion périodique → Sqoop, Talend, Informatica.
+  * **Streaming (temps réel)** : Kafka, Flume, NiFi, Pulsar.
+* **Exemple** : Kafka collecte en temps réel des millions de clics d’utilisateurs sur un site e-commerce.
 
 </div>
 
 ---
+## Architecture et Technologies du Big Data
 
-## Les règles d'enregistrement
+### L’Architecture du Big Data
 
-#### Exemples pratiques de règles d'enregistrement
+<div style="font-size:25px">
 
-<br>
+### 2️⃣ Les différentes couches de l’architecture Big Data
 
-<div style="font-size:30px">
+### 🔹 3. Stockage distribué
 
-**Exemple 1 : Taux de requêtes HTTP par service**
-
-<br>
-
-Calcul du taux de requêtes HTTP toutes les 5 minutes, regroupé par service :
-
-```yaml
-groups:
-  - name: http_requests.rules
-    rules:
-      - record: service:http_requests:rate5m
-        expr: sum(rate(http_requests_total[5m])) by (service)
-```
+* Objectif : stocker de manière fiable et scalable.
+* **Data Lake** : stockage brut (S3, ADLS, HDFS, GCS).
+* **Bases NoSQL** : MongoDB (documents), Cassandra (colonnes), Neo4j (graphes).
+* **Formats optimisés** : Parquet, ORC, Avro (compacts, colonnes → rapides pour analyse).
+* **Exemple** : un Data Lake S3 hébergeant vidéos, logs JSON, fichiers CSV et données IoT.
 
 </div>
 
 ---
 
-## Les règles d'enregistrement
+## Architecture et Technologies du Big Data
 
-#### Exemples pratiques de règles d'enregistrement
+### L’Architecture du Big Data
 
-<br>
+<div style="font-size:25px">
 
-<div style="font-size:30px">
+### 2️⃣ Les différentes couches de l’architecture Big Data
 
-**Exemple 2 : Utilisation moyenne de la mémoire par instance**
+### 🔹 4. Traitement des données
 
-<br>
+Deux modes complémentaires :
 
-Calcul de l’utilisation moyenne de la mémoire sur les 10 dernières minutes par instance :
+1. **Batch (traitement différé)**
 
-```yaml
-groups:
-  - name: memory_usage.rules
-    rules:
-      - record: instance:memory_usage:avg10m
-        expr: avg_over_time(node_memory_Active_bytes[10m]) by (instance)
-```
+   * Outils : Hadoop MapReduce, Spark.
+   * Cas : analyses historiques, calculs lourds (fraude sur 1 an de transactions).
 
-</div>
+2. **Streaming (temps réel)**
 
----
-
-## Les règles d'enregistrement
-
-#### Exemples pratiques de règles d'enregistrement
-
-<br>
-
-<div style="font-size:30px">
-
-**Exemple 3 : Taux d’erreurs HTTP 500**
-
-<br>
-
-Calcul du taux d’erreurs HTTP 500 toutes les 5 minutes :
-
-```yaml
-groups:
-  - name: error_rate.rules
-    rules:
-      - record: http_errors_500:rate5m
-        expr: rate(http_requests_total{status="500"}[5m])
-```
+   * Outils : Spark Streaming, Flink, Storm.
+   * Cas : détection de fraude en direct, suivi trafic urbain, monitoring IoT.
 
 </div>
 
 ---
 
-## Les règles d'enregistrement
+## Architecture et Technologies du Big Data
 
-#### Schéma d'utilisation des règles d'enregistrement
+### L’Architecture du Big Data
 
-<br>
+<div style="font-size:28px">
 
-<div style="font-size:30px">
+### 2️⃣ Les différentes couches de l’architecture Big Data
 
-Les règles d’enregistrement créent une structure de données plus légère pour Prometheus, permettant de :
+#### 🔹 5. Gouvernance, qualité et sécurité
 
-1. **Pré-calculer les valeurs critiques pour les alertes (par exemple, taux d’erreurs).**
-2. **Réduire la charge des calculs en regroupant les données brutes en métriques synthétiques.**
-3. **Améliorer les temps de réponse des requêtes PromQL dans Grafana ou d'autres interfaces.**
+* **Data Catalog** : Alation, Collibra (inventaire des données).
+* **Qualité** : Data Cleaning, lineage (traçabilité).
+* **Sécurité** : chiffrement, contrôle d’accès (Kerberos, Ranger), anonymisation (RGPD).
+* **Exemple** : masque des données sensibles avant de les partager avec les équipes marketing.
 
 </div>
 
 ---
 
-## Les règles d'enregistrement
+## Architecture et Technologies du Big Data
 
-## Travaux pratiques
+### L’Architecture du Big Data
 
-<div style="font-size:39px">
+<div style="font-size:28px">
 
+### 2️⃣ Les différentes couches de l’architecture Big Data
+
+#### 🔹 6. Stockage analytique & requêtage
+
+* **Entrepôts de données (Data Warehouse)** : Redshift, BigQuery, Synapse.
+* **Data Lakehouse** : Delta Lake (Databricks), Snowflake, Iceberg.
+* **Requêtage SQL massivement parallèle** : Presto, Trino, Hive.
+* **Exemple** : analyste exécutant une requête SQL sur 10 ans de données clients (en quelques secondes via BigQuery).
+</div>
+
+---
+
+## Architecture et Technologies du Big Data
+
+### L’Architecture du Big Data
+
+<div style="font-size:28px">
+
+### 2️⃣ Les différentes couches de l’architecture Big Data
+
+#### 🔹 7. Machine Learning & Intelligence Artificielle
+
+* **Moteurs ML** : MLlib (Spark), TensorFlow, PyTorch, Scikit-Learn.
+* **MLOps** : Kubeflow, MLflow pour industrialiser les modèles (monitoring, versionning).
+* **Cas** : recommandation Netflix, maintenance prédictive, NLP pour assistants virtuels.
+
+</div>
+
+---
+
+## Architecture et Technologies du Big Data
+
+### L’Architecture du Big Data
+
+<div style="font-size:28px">
+
+### 2️⃣ Les différentes couches de l’architecture Big Data
+
+#### 🔹 8. Restitution & visualisation
+
+* **BI / Analytics** : Tableau, Power BI, Qlik Sense.
+* **Dashboards temps réel** : Grafana, Kibana.
+* **APIs** : exposer les données aux applications (REST/GraphQL).
+* **Exemple** : tableau de bord affichant en temps réel le volume de commandes par région.
+
+</div>
+
+---
+
+
+
+##### 3️⃣ Schéma global d’une architecture Big Data moderne
+
+<br>
 <center>
-
-# Mise en œuvre de règles d'enregistrement.
-
+<img src="./assets/pipe.png" width="200px" height="450px">
 </center>
 
 </div>
 
+---
+
+## Architecture et Technologies du Big Data
+
+### L’Architecture du Big Data
+
+<div style="font-size:30px">
+
+##### 3️⃣ Schéma global d’une architecture Big Data moderne
+
+<center>
+<img src="./assets/pipe2.png" width="700px" >
+</center>
+
+</div>
+
+---
+
+## Architecture et Technologies du Big Data
+
+### L’Architecture du Big Data
+
+<div style="font-size:30px">
+
+<center>
+<img src="./assets/pipe3.png" width="800px" >
+</center>
+
+</div>
+
+---
+
+## Architecture et Technologies du Big Data
+
+### L’Architecture du Big Data
+
+<br>
+
+<div style="font-size:30px">
+
+<center>
+<img src="./assets/pipe4.png" width="800px" >
+</center>
+
+</div>
+
+---
+
+## Architecture et Technologies du Big Data
+
+### L’Architecture du Big Data
+
+<br>
+
+<div style="font-size:30px">
+
+<center>
+<img src="./assets/pipe5.png" width="800px" >
+</center>
+
+</div>
+
+---
+
+
+## Architecture et Technologies du Big Data
+
+### L’Architecture du Big Data
+
+<br>
+
+<div style="font-size:30px">
+
+<center>
+<img src="./assets/pipe6.png" width="800px" >
+</center>
+
+</div>
+
+---
+
+## Architecture et Technologies du Big Data
+
+### L’Architecture du Big Data
+
+
+<div style="font-size:30px">
+
+<center>
+<img src="./assets/pipe7.png" width="800px" >
+</center>
+
+</div>
+
+---
+
+## Architecture et Technologies du Big Data
+
+### L’Architecture du Big Data
+
+
+<div style="font-size:30px">
+
+<center>
+<img src="./assets/pipe8.jpg" width="300px" >
+</center>
+
+</div>
+
+---
+
+## Architecture et Technologies du Big Data
+
+### L’Architecture du Big Data
+
+<div style="font-size:30px">
+
+#### 4️⃣ Évolutions de l’architecture Big Data
+
+* **Hier :** Hadoop (stockage HDFS + batch MapReduce).
+* **Aujourd’hui :** Spark/Flink + Kafka + Cloud Data Lakehouse.
+* **Demain :** Data Mesh (données gérées comme des produits par domaines), Edge + 5G (traitement proche des sources), Quantum Big Data.
+
+</div>
 
 ---
 
 <!-- _class: lead -->
 <!-- _paginate: false -->
 
-## Gérer les alertes
+## Technologies du Big Data
 
 ---
 
-## Gérer les alertes
+##  Technologies du Big Data
 
-#### Présentation des alertes dans Prometheus
+
+
+<div style="font-size:25px">
+
+### 1️⃣ L’écosystème Hadoop : fondations historiques
+
+Lancé au milieu des années 2000, **Hadoop** a révolutionné la manière de stocker et traiter les données massives distribuées. Il repose sur trois piliers principaux 
+
+### 🔹 HDFS (Hadoop Distributed File System)
+
+* **But** : stocker de très grands volumes de données sur des clusters de serveurs standards.
+* **Concept** : chaque fichier est découpé en blocs (par défaut 128 Mo) et répliqué sur plusieurs nœuds (3 copies typiques).
+* **Avantages** :
+
+  * Tolérance aux pannes (un nœud qui tombe → données accessibles ailleurs).
+  * Scalabilité horizontale (ajout de serveurs = plus de stockage).
+* **Exemple** : stocker des pétaoctets de logs web répartis sur 100 serveurs.
+
+</div>
+
+---
+
+##  Technologies du Big Data
+
+
+
+<div style="font-size:25px">
 
 <br>
 
-<div style="font-size:33px">
+<center>
+<img src="./assets/hdfs.webp" width="800px" >
+</center>
 
-**La gestion des alertes** dans Prometheus permet de surveiller des seuils, détecter des anomalies, et notifier les équipes en cas de problèmes critiques. Les alertes sont configurées dans Prometheus avec des règles spécifiques, puis envoyées via l'**Alertmanager**, qui gère la distribution, le routage, et la configuration des notifications.
 
 </div>
 
 ---
 
+##  Technologies du Big Data
 
-## Gérer les alertes
 
-#### Présentation des alertes dans Prometheus
-<div style="font-size:22px">
 
-- Les alertes dans Prometheus sont basées sur des expressions **PromQL**. 
-- Une **règle d’alerte** spécifie une condition à surveiller et déclenche une alerte si cette condition est remplie. 
-- Les alertes sont ensuite transmises à Alertmanager, qui se charge de les envoyer aux **receivers** (destinataires) tels que les e-mails, Slack, ou PagerDuty.
+<div style="font-size:30px">
 
-- Exemple d’alerte pour surveiller une utilisation élevée de la CPU :
-```yaml
-alert: HighCpuUsage
-expr: avg(rate(node_cpu_seconds_total{mode="system"}[5m])) by (instance) > 0.8
-for: 5m
-labels:
-  severity: critical
-annotations:
-  summary: "Utilisation CPU élevée"
-  description: "L'instance {{ $labels.instance }} a une utilisation CPU > 80% depuis 5 minutes."
-```
+### 1️⃣ L’écosystème Hadoop : fondations historiques
+
+
+
+### 🔹 YARN (Yet Another Resource Negotiator)
+
+* **But** : gestionnaire de ressources du cluster Hadoop.
+* **Fonction** : attribue CPU/RAM aux jobs soumis au cluster.
+* **Analogie** : un “chef d’orchestre” qui décide quelle application tourne où et quand.
+* **Exemple** : si plusieurs applications (Spark, MapReduce, Hive) tournent sur le même cluster, YARN alloue équitablement les ressources.
 
 </div>
 
 ---
 
-## Gérer les alertes
+##  Technologies du Big Data
 
-#### Les règles d’alerte
 
-<div style="font-size:27px">
 
-<br>
+<div style="font-size:28px">
 
-Les **règles d’alerte** sont définies dans des fichiers YAML et spécifient les conditions de déclenchement et les informations associées. Une règle d’alerte comprend :
-
-- **alert** : Nom de l'alerte.
-- **expr** : Expression PromQL déclenchant l'alerte.
-- **for** : (Optionnel) Durée pendant laquelle la condition doit être remplie avant de déclencher l'alerte.
-- **labels** : Labels associés à l'alerte, souvent utilisés pour le routage ou la priorisation.
-- **annotations** : Informations supplémentaires, comme les descriptions, souvent affichées dans les notifications.
+<center>
+<img src="./assets/yarn.png" width="900px" >
+</center>
 
 </div>
 
 ---
 
-## Gérer les alertes
+##  Technologies du Big Data
 
-####  Annotations et templates
+
+
+<div style="font-size:26px">
+
+### 1️⃣ L’écosystème Hadoop : fondations historiques
+
+
+### 🔹 MapReduce
+
+* **Paradigme de calcul distribué** développé initialement par Google.
+* **Deux étapes principales** :
+
+  * **Map** : transformation des données (ex : extraire tous les mots d’un document).
+  * **Reduce** : agrégation des résultats (ex : compter la fréquence de chaque mot).
+* **Avantages** : traitement parallèle massif.
+* **Limites** :
+
+  * Lourd et lent (chaque étape nécessite d’écrire sur disque).
+  * Moins adapté au **temps réel** → d’où l’émergence de Spark.
+</div>
+
+---
+
+##  Technologies du Big Data
+
+
+
+<div style="font-size:26px">
+
+
+<center>
+<img src="./assets/mapreduce.png" width="700px" >
+</center>
+</div>
+
+---
+
+##  Technologies du Big Data
+
+
+
+<div style="font-size:26px">
+
+## 2️⃣ Traitement batch & streaming : Spark, Kafka, Flink
+
+### 🔹 Apache Spark
+
+* **Successeur de MapReduce** : beaucoup plus rapide (traitement en mémoire).
+* **Modules** :
+
+  * Spark SQL (requêtes SQL sur données massives).
+  * MLlib (Machine Learning distribué).
+  * GraphX (analyse de graphes).
+  * Spark Streaming (flux temps réel “micro-batch”).
+* **Exemple** : analyser en quelques secondes les logs de millions de clics pour comprendre le comportement utilisateur.
+
+</div>
+
+---
+
+##  Technologies du Big Data
+
+
+
+<div style="font-size:26px">
+
+
+
+<center>
+<img src="./assets/spark.webp" width="1000px" >
+</center>
+
+</div>
+
+---
+
+##  Technologies du Big Data
+
+
+
+<div style="font-size:26px">
+
+## 2️⃣ Traitement batch & streaming : Spark, Kafka, Flink
+
+### 🔹 Apache Kafka
+
+* **Plateforme de streaming distribué** (pub/sub).
+* **Concept** : données → topics → consommateurs.
+* **Cas d’usage** :
+
+  * Collecter logs d’applications.
+  * Streaming de transactions bancaires.
+  * Systèmes d’alertes en temps réel.
+* **Exemple** : Uber → Kafka collecte en temps réel la géolocalisation des chauffeurs et passagers.
+
+</div>
+
+---
+
+##  Technologies du Big Data
+
+
+
+<div style="font-size:26px">
+
+
+
+<center>
+<img src="./assets/kafka.webp" width="900px" >
+</center>
+
+</div>
+
+---
+
+##  Technologies du Big Data
+
+
+
+<div style="font-size:26px">
+
+## 2️⃣ Traitement batch & streaming : Spark, Kafka, Flink
+
+### 🔹 Apache Flink
+
+* **Moteur de traitement temps réel natif (vs Spark micro-batch)**.
+* **Points forts** :
+
+  * Latence très faible (< 100 ms).
+  * Fenêtres temporelles puissantes (sliding, tumbling).
+  * Gestion avancée des états distribués.
+* **Exemple** : analyse en temps réel des flux IoT (capteurs industriels, smart meters).
+
+</div>
+
+---
+
+##  Technologies du Big Data
+
+
 
 <div style="font-size:26px">
 
 <br>
 
-- Les **annotations** permettent d’ajouter des informations supplémentaires aux alertes, comme un résumé ou une description détaillée. 
-- Les **templates** permettent d’insérer dynamiquement des valeurs issues de l’alerte, en utilisant la syntaxe de Go templating (`{{ }}`).
-
-- Exemple d’annotation avec des templates :
-
-```yaml
-annotations:
-  summary: "Utilisation élevée de la mémoire sur {{ $labels.instance }}"
-  description: "L'instance {{ $labels.instance }} utilise {{ $value }}% de mémoire depuis plus de 5 minutes."
-```
-- Les annotations permettent d'inclure des détails utiles dans les notifications, facilitant ainsi la compréhension et le dépannage des alertes.
-
-</div>
-
----
-
-## Gérer les alertes
-
-####  Bonnes pratiques pour les alertes
-
-<div style="font-size:24px">
-
-<br>
-
-- **Utilisez des seuils réalistes** : Évitez les alertes trop sensibles qui génèrent de nombreux faux positifs, et testez les seuils avant de les déployer.
-- **Utilisez `for` pour limiter les alertes de courte durée** : La directive `for` empêche les alertes temporaires (spikes) en ne déclenchant les alertes qu’après une durée continue de condition remplie.
-- **Priorisez les alertes critiques** : Utilisez des labels de sévérité (`severity: critical`, `severity: warning`) pour définir des niveaux de priorité.
-- **Centralisez les alertes similaires** : Groupez des alertes similaires sous un même nom d’alerte et ajoutez des informations spécifiques via des labels.
-- **Automatisez les templates** : Utilisez des templates pour générer des messages de notification cohérents et informatifs.
-
-</div>
-
----
-
-## Gérer les alertes
-
-####  Pipelines de notification
-
-<div style="font-size:27px">
-
-<br>
-
-Les **pipelines de notification** dans Alertmanager permettent de configurer des étapes de traitement pour les alertes avant leur envoi. Cela inclut :
-
-- **Agrégation des alertes** : Grouper les alertes similaires pour éviter de surcharger les destinataires avec des notifications répétitives.
-- **Déduplication** : Si une alerte a déjà été envoyée et qu’elle n’est pas résolue, Alertmanager évite d’envoyer des duplicatas.
-- **Temporisation des alertes** : Vous pouvez configurer Alertmanager pour retarder ou silencier certaines alertes pendant une période définie.
-
-<br>
-
-Ces pipelines sont configurés via les règles de routage et les receivers (destinataires).
-
-</div>
-
----
-
-## Gérer les alertes
-
-####  Fichier de configuration de l'Alertmanager
-
-<div style="font-size:15px">
-
-Le fichier de configuration de l'Alertmanager (`alertmanager.yml`) contient les règles de routage, les receivers, et d'autres paramètres de notification. Voici un exemple de base de configuration :
-
-```yaml
-route:
-  receiver: 'team-email'  # Receiver par défaut
-  group_by: ['alertname', 'instance']
-  group_wait: 30s  # Temporisation initiale pour les alertes similaires
-  group_interval: 5m  # Intervalle entre les notifications regroupées
-  repeat_interval: 3h  # Intervalle pour répéter les alertes non résolues
-  routes:
-    - match:
-        severity: critical
-      receiver: 'pagerduty'  # Les alertes critiques sont envoyées à PagerDuty
-    - match:
-        severity: warning
-      receiver: 'team-slack'  # Les alertes warning sont envoyées à Slack
-
-receivers:
-  - name: 'team-email'
-    email_configs:
-      - to: 'alerts@example.com'
-  - name: 'pagerduty'
-    pagerduty_configs:
-      - service_key: '<your_service_key>'
-  - name: 'team-slack'
-    slack_configs:
-      - channel: '#alerts'
-        send_resolved: true
-```
-</div>
-
----
-
-## Gérer les alertes
-
-#### Règles de routage
-
-<div style="font-size:20px">
-
-Les **règles de routage** contrôlent la distribution des alertes dans Alertmanager. Elles permettent de spécifier les destinataires, les règles d’agrégation, et les conditions de routage basées sur les labels d'alerte.
-
-- **Route par défaut** : Définie au niveau racine (`route`), cette route est utilisée si aucune autre règle spécifique ne correspond.
-- **Routes conditionnelles** : Les sous-routes (`routes`) définissent des conditions de correspondance (`match` ou `match_re`) pour router les alertes en fonction des labels.
-
-- Exemple de routage par niveau de sévérité :
-```yaml
-route:
-  receiver: 'default'
-  routes:
-    - match:
-        severity: critical
-      receiver: 'on-call-team'
-    - match:
-        severity: warning
-      receiver: 'monitoring-team'
-```
-</div>
-
----
-
-## Gérer les alertes
-
-#### Les receivers (destinataires)
-
-<div style="font-size:16px">
-
-<br>
-
-Les **receivers** sont les canaux de notification où les alertes sont envoyées. Alertmanager prend en charge plusieurs types de receivers :
-
-- **E-mail** : Notifications envoyées par email.
-- **Slack** : Notifications envoyées vers des canaux Slack.
-- **PagerDuty** : Intégration avec PagerDuty pour les alertes critiques.
-- **Webhook** : Envoie les alertes à une URL spécifique, permettant de les traiter dans des systèmes externes.
-- **OpsGenie, VictorOps** : Outils de gestion des incidents.
-
-- Exemples de configuration de receivers :
-```yaml
-receivers:
-  - name: 'team-email'
-    email_configs:
-      - to: 'alerts@example.com'
-  - name: 'team-slack'
-    slack_configs:
-      - channel: '#alerts'
-        send_resolved: true
-  - name: 'webhook'
-    webhook_configs:
-      - url: 'http://webhook-service.local/alert'
-```
-</div>
-
----
-
-## Gérer les alertes
-
-#### Exemples pratiques
-
-<div style="font-size:19px">
-
-1. **Alerte de CPU élevé avec escalade** :
-   - Créez une alerte de haute utilisation CPU qui passe d'une alerte "warning" (slack) à "critical" (PagerDuty) si elle dure plus longtemps.
-
-   ```yaml
-   groups:
-     - name: cpu.rules
-       rules:
-         - alert: HighCpuUsageWarning
-           expr: avg(rate(node_cpu_seconds_total[5m])) by (instance) > 0.7
-           for: 5m
-           labels:
-             severity: warning
-           annotations:
-             summary: "CPU élevé sur {{ $labels.instance }} (warning)"
-         - alert: HighCpuUsageCritical
-           expr: avg(rate(node_cpu_seconds_total[5m])) by (instance) > 0.9
-           for: 5m
-           labels:
-             severity: critical
-           annotations:
-             summary: "CPU très élevé sur {{ $labels.instance }} (critical)"
-   ```
-</div>
-
----
-
-## Gérer les alertes
-
-#### Exemples pratiques
-
-<div style="font-size:19px">
-
-2. **Routage conditionnel pour les alertes critiques et warnings** :
-   - Dans Alertmanager, routez les alertes critiques vers PagerDuty et les warnings vers un canal Slack.
-
-   ```yaml
-   route:
-     receiver: 'default'
-     routes:
-       - match:
-           severity: critical
-         receiver: 'pagerduty'
-       - match:
-           severity: warning
-         receiver: 'slack-warnings'
-
-   receivers:
-     - name: 'pagerduty'
-       pagerduty_configs:
-         - service_key: '<your_service_key>'
-     - name: 'slack-warnings'
-       slack_configs:
-         - channel: '#warnings'
-   ```
-</div>
-
----
-
-## Gérer les alertes
-
-## Travaux pratiques
-
-<div style="font-size:39px">
-
 <center>
-
-# Mise en place d'alertes avec des règles de routage.
-
+<img src="./assets/flink.png" width="1000px" >
 </center>
 
 </div>
+
+---
+
+##  Technologies du Big Data
+
+
+
+<div style="font-size:26px">
+
+<br>
+
+<center>
+<img src="./assets/flink0.png" width="900px" >
+</center>
+
+</div>
+
+---
+
+##  Technologies du Big Data
+
+
+
+<div style="font-size:26px">
+
+<br>
+
+<center>
+<img src="./assets/flink1.jpg" width="800px" >
+</center>
+
+</div>
+
+---
+
+##  Technologies du Big Data
+
+<div style="font-size:31px">
+
+#### 3️⃣ Bases de données NoSQL : flexibilité et scalabilité
+
+#### 🔹 Cassandra
+
+* **Base orientée colonnes distribuée** (inspirée de BigTable de Google).
+* **Forces** : haute disponibilité, tolérance aux pannes, scalabilité linéaire.
+* **Exemple** : Netflix l’utilise pour gérer les données de visionnage de millions d’utilisateurs en temps réel.
+
+</div>
+
+---
+
+##  Technologies du Big Data
+
+<div style="font-size:20px">
+
+## 3️⃣ Bases de données NoSQL : flexibilité et scalabilité
+
+## 🔹 Cassandra
+
+Cassandra suit une **architecture distribuée** **sans maître** :
+Tous les nœuds d’un cluster sont **égaux** (architecture **peer-to-peer**).
+Cela garantit :
+
+* Pas de **single point of failure**.
+* Une **réplication automatique**.
+* Une **scalabilité horizontale** : on peut ajouter des nœuds facilement.
+
+### **Composants clés** :
+
+* **Cluster** → Ensemble de nœuds.
+* **Nœud** → Serveur qui stocke une partie des données.
+* **Keyspace** → "Base de données logique" qui définit la stratégie de réplication.
+* **Table** → Stocke les lignes organisées par clés.
+* **Partition** → Ensemble des lignes partageant une clé commune.
+
+
+</div>
+
+---
+
+##  Technologies du Big Data
+
+<div style="font-size:20px">
+
+## 3️⃣ Bases de données NoSQL : flexibilité et scalabilité
+
+## 🔹 Cassandra
+
+Cassandra suit une **architecture distribuée** **sans maître** :
+Tous les nœuds d’un cluster sont **égaux** (architecture **peer-to-peer**).
+Cela garantit :
+
+* Pas de **single point of failure**.
+* Une **réplication automatique**.
+* Une **scalabilité horizontale** : on peut ajouter des nœuds facilement.
+
+### **Composants clés** :
+
+* **Cluster** → Ensemble de nœuds.
+* **Nœud** → Serveur qui stocke une partie des données.
+* **Keyspace** → "Base de données logique" qui définit la stratégie de réplication.
+* **Table** → Stocke les lignes organisées par clés.
+* **Partition** → Ensemble des lignes partageant une clé commune.
+
+
+</div>
+
+---
+
+
+##  Technologies du Big Data
+
+<div style="font-size:25px">
+
+## 3️⃣ Bases de données NoSQL : flexibilité et scalabilité
+
+## 🔹 Cassandra
+
+Cassandra est une **base NoSQL orientée colonnes distribuées**.
+Elle a été conçue pour des besoins spécifiques :
+
+* **Haute disponibilité**
+* **Écriture massive**
+* **Scalabilité horizontale**
+* **Résilience multi-datacenter**
+
+Contrairement à d’autres modèles, Cassandra **sacrifie la cohérence stricte** au profit de la **disponibilité** et de la **tolérance aux pannes** (principe **BASE** → *Basically Available, Soft state, Eventual consistency*).
+
+</div>
+
+---
+
+
+##  Technologies du Big Data
+
+<div style="font-size:28px">
+
+## 3️⃣ Bases de données NoSQL : flexibilité et scalabilité
+
+### 🔹 MongoDB
+
+* **Base orientée documents (JSON/BSON)**.
+* **Forces** :
+
+  * Flexibilité du schéma.
+  * Facile à utiliser pour applications modernes (APIs REST).
+* **Exemple** : e-commerce (catalogue produits aux attributs variables).
+
+</div>
+
+---
+
+##  Technologies du Big Data
+
+<div style="font-size:28px">
+
+## 3️⃣ Bases de données NoSQL : flexibilité et scalabilité
+
+### 🔹 HBase
+
+* **Base distribuée clé-colonne sur HDFS**.
+* **Points forts** :
+
+  * Intégrée à l’écosystème Hadoop.
+  * Accès aléatoire rapide à de gros volumes.
+* **Exemple** : Facebook l’a utilisée pour sa messagerie.
+
+</div>
+
+---
+
+##  Technologies du Big Data
+
+<div style="font-size:28px">
+
+## 3️⃣ Bases de données NoSQL : flexibilité et scalabilité
+
+### 🔹 HBase
+
+* **Base distribuée clé-colonne sur HDFS**.
+* **Points forts** :
+
+  * Intégrée à l’écosystème Hadoop.
+  * Accès aléatoire rapide à de gros volumes.
+* **Exemple** : Facebook l’a utilisée pour sa messagerie.
+
+</div>
+
+---
+
+
+##  Technologies du Big Data
+
+
+
+| **Caractéristique**        | **Cassandra** *(NoSQL Colonnes)* | **SQL classique** *(MySQL, PostgreSQL)* | **MongoDB** *(Document NoSQL)* | **Redis** *(Clé-Valeur)* | **Neo4j** *(Graphes)*      |
+| -------------------------- | -------------------------------- | --------------------------------------- | ------------------------------ | ------------------------ | -------------------------- |
+| **Modèle**                 | Colonnes distribuées             | Relationnel                             | Documents JSON                 | Paires clé-valeur        | Graphes orientés           |
+| **Schéma**                 | Flexible, colonnes dynamiques    | Rigide, nécessite migrations            | Flexible                       | Aucun                    | Flexible                   |
+| **Scalabilité**            | **Horizontale native**           | Verticale (scaling limité)              | Horizontale                    | Horizontale              | Limitée                    |
+| **Performance écriture**   | **Très élevée**                  | Bonne mais dépend des verrous           | Haute                          | **Excellente**           | Moyenne                    |
+
+
+</div>
+
+---
+
+
+| **Caractéristique**        | **Cassandra** *(NoSQL Colonnes)* | **SQL classique** *(MySQL, PostgreSQL)* | **MongoDB** *(Document NoSQL)* | **Redis** *(Clé-Valeur)* | **Neo4j** *(Graphes)*      |
+| -------------------------- | -------------------------------- | --------------------------------------- | ------------------------------ | ------------------------ | -------------------------- |
+| **Performance lecture**    | Très bonne avec clé connue       | Très bonne                              | Excellente                     | Excellente               | Excellente                 |
+| **Réplication multi-DC**   | **Native et simple**             | Complexe                                | Possible mais lourde           | Limitée                  | Faible                     |
+| **Cohérence**              | **Éventuelle** configurable      | Forte (ACID)                            | Forte ou éventuelle            | Forte                    | Forte                      |
+| **Cas d’usage**            | IoT, logs, transactions massives | ERP, CRM, BI                            | API Web, catalogues            | Cache, files d’attente   | Réseaux sociaux, relations |
+| **Exemples d’entreprises** | Netflix, Uber, Instagram         | Banque, e-commerce, ERP                 | eBay, Expedia, Lyft            | Twitter, GitHub          | LinkedIn, Facebook         |
+
+
+</div>
+
+---
+
+##  Technologies du Big Data
+
+<div style="font-size:28px">
+
+## 4️⃣ Cloud & Big Data : démocratisation à grande échelle
+
+### 🔹 AWS
+
+* **EMR (Elastic MapReduce)** : Hadoop/Spark/Kafka managés.
+* **Redshift** : entrepôt de données massives.
+* **S3** : stockage objet massivement scalable (souvent utilisé comme Data Lake).
+
+### 🔹 Azure
+
+* **Azure Synapse Analytics** : Data Warehouse cloud.
+* **Azure Databricks** : traitement big data & IA (Spark managé).
+* **Data Lake Storage** : stockage distribué basé sur Blob.
+
+
+
+</div>
+
+---
+
+##  Technologies du Big Data
+
+<div style="font-size:30px">
+
+## 4️⃣ Cloud & Big Data : démocratisation à grande échelle
+
+### 🔹 GCP
+
+* **BigQuery** : entrepôt de données serverless, très rapide (SQL sur pétaoctets).
+* **Dataflow** : traitement batch & stream (Apache Beam managé).
+* **Cloud Storage** : stockage distribué.
+
+👉 **Avantage Cloud** : services managés → plus besoin d’administrer le cluster, pay-as-you-go, élasticité automatique.
+
+
+
+</div>
+
+---
+
+##  Technologies du Big Data
+
+<div style="font-size:30px">
+
+## 5️⃣ Modern Data Stack : vers le Data Lakehouse
+
+### 🔹 Data Lakehouse
+
+* **Fusion du Data Lake (souplesse)** + **Data Warehouse (performance et gouvernance)**.
+* Permet à la fois :
+
+  * Stockage de tous types de données (structurées + non structurées).
+  * Requêtes SQL rapides pour la BI.
+  * Support natif pour ML/IA.
+
+</div>
+
+---
+
+##  Technologies du Big Data
+
+<div style="font-size:26px">
+
+## 5️⃣ Modern Data Stack : vers le Data Lakehouse
+
+### 🔹 Delta Lake
+
+* Développé par **Databricks**.
+* Ajoute une **couche transactionnelle ACID** au Data Lake.
+* **Fonctionnalités** :
+
+  * Historisation (time travel).
+  * Gestion de la qualité des données (schema enforcement).
+  * Meilleure intégration Spark.
+* **Exemple** : banques utilisant Delta Lake pour auditer toutes les transactions avec garanties ACID.
+
+</div>
+
+---
+
+##  Technologies du Big Data
+
+<div style="font-size:27px">
+
+## 5️⃣ Modern Data Stack : vers le Data Lakehouse
+
+### 🔹 Snowflake
+
+* **Entrepôt de données cloud-native** (multi-cloud : AWS, Azure, GCP).
+* **Points forts** :
+
+  * Décorrélation stockage / calcul (scalabilité indépendante).
+  * Concurrence massive (plusieurs équipes requêtent en parallèle sans ralentissement).
+  * Partage sécurisé de données (“Data Sharing”).
+* **Exemple** : une entreprise SaaS qui partage ses données analytiques avec ses clients en temps réel.
+
+</div>
+
+---
+
+
+
+<!-- _class: lead -->
+<!-- _paginate: false -->
+
+## Enjeux Organisationnels et Gouvernance du Big Data
+
+---
+
+###  Enjeux Organisationnels et Gouvernance du Big Data
+
+<div style="font-size:24px">
+
+## 1️⃣ Organisation autour de la donnée
+
+### 🔹 Le **Data Office**
+
+* **Mission** : piloter la stratégie data de l’entreprise, définir les règles de gouvernance, assurer la conformité et maximiser la valeur métier.
+* **Composition typique** :
+
+  * **Chief Data Officer (CDO)** : définit la stratégie globale et reporte souvent au DG ou DSI.
+  * **Data Governance Lead** : met en place politiques & processus de gouvernance.
+  * **Data Steward** : responsable qualité & documentation des données dans un domaine spécifique.
+  * **Data Architect** : conçoit les architectures data (lakes, warehouses, pipelines).
+
+</div>
+
+---
+###  Enjeux Organisationnels et Gouvernance du Big Data
+
+<div style="font-size:19px">
+
+## 1️⃣ Organisation autour de la donnée
+
+### 🔹 Les rôles clés opérationnels
+
+1. **Data Engineer**
+
+   * Conçoit et maintient les pipelines de données (ETL/ELT, ingestion Kafka, jobs Spark).
+   * Gère la performance, la scalabilité, la disponibilité.
+   * Exemple : mettre en place un pipeline Kafka → S3 → Delta Lake.
+
+2. **Data Scientist**
+
+   * Exploite les données pour créer des modèles prédictifs et d’IA (ML, deep learning).
+   * Exemple : développer un modèle de prédiction de churn clients.
+
+3. **Data Analyst**
+
+   * Transforme les données en insights via SQL, visualisation (Tableau, PowerBI).
+   * Exemple : créer un tableau de bord des ventes par région et canal.
+
+</div>
+
+---
+
+###  Enjeux Organisationnels et Gouvernance du Big Data
+
+<div style="font-size:27px">
+
+## 2️⃣ Gouvernance et qualité de la donnée
+
+### 🔹 Gouvernance des données
+
+* **Objectifs** :
+
+  * Garantir **fiabilité, accessibilité et sécurité** des données.
+  * Définir **qui peut faire quoi** avec les données.
+  * Harmoniser les définitions métiers (ex. “client actif”).
+* **Cadres et référentiels** : DAMA-DMBOK, DCAM, ISO/IEC 38505.
+
+</div>
+
+---
+
+
+###  Enjeux Organisationnels et Gouvernance du Big Data
+
+<div style="font-size:27px">
+
+## 2️⃣ Gouvernance et qualité de la donnée
+
+### 🔹 Qualité de la donnée
+
+* Dimensions clés :
+
+  * **Exactitude** : données correctes (ex. code postal valide).
+  * **Complétude** : absence de valeurs manquantes critiques.
+  * **Cohérence** : alignement entre systèmes (même client = même ID partout).
+  * **Fraîcheur (timeliness)** : actualité des données (données de stock < 1h).
+* Outils : **Great Expectations, Deequ, Talend DQ**.
+
+</div>
+
+---
+
+###  Enjeux Organisationnels et Gouvernance du Big Data
+
+<div style="font-size:30px">
+
+## 2️⃣ Gouvernance et qualité de la donnée
+
+### 🔹 Data Catalog
+
+* **But** : inventaire des données disponibles dans l’entreprise.
+* Fonctionnalités : recherche, métadonnées, classification (PII/PHI), accès.
+* Outils : Collibra, Alation, AWS Glue Data Catalog.
+
+</div>
+
+---
+
+###  Enjeux Organisationnels et Gouvernance du Big Data
+
+<div style="font-size:30px">
+
+## 2️⃣ Gouvernance et qualité de la donnée
+
+### 🔹 Data Lineage
+
+* **Traçabilité des données** : savoir d’où elles viennent, quelles transformations elles ont subies, où elles sont utilisées.
+* Exemple : un indicateur financier calculé à partir de données clients doit être traçable jusqu’aux systèmes sources.
+* Outils : Apache Atlas, OpenLineage.
+
+</div>
+
+---
+
+
+###  Enjeux Organisationnels et Gouvernance du Big Data
+
+<div style="font-size:28px">
+
+## 2️⃣ Gouvernance et qualité de la donnée
+
+### 🔹 MDM (Master Data Management)
+
+* Vise à créer une **“golden record”** unique pour chaque entité clé (client, produit, fournisseur).
+* Évite les doublons et incohérences (un même client = 5 entrées différentes dans différents systèmes).
+* Exemple : banque qui doit avoir une vision unique d’un client pour gérer son risque global.
+
+</div>
+
+---
+
+###  Enjeux Organisationnels et Gouvernance du Big Data
+
+<div style="font-size:26px">
+
+## 3️⃣ Sécurité & conformité
+
+### 🔹 RGPD (Règlement Général sur la Protection des Données)
+
+* Principes :
+
+  * Consentement explicite.
+  * Minimisation des données.
+  * Droit d’accès, rectification, effacement (“droit à l’oubli”).
+  * Privacy by design & by default.
+* Exemple : un site e-commerce doit permettre à un client de demander l’effacement complet de ses données personnelles.
+
+</div>
+
+---
+
+###  Enjeux Organisationnels et Gouvernance du Big Data
+
+<div style="font-size:26px">
+
+## 3️⃣ Sécurité & conformité
+
+### 🔹 Data Sovereignty (souveraineté des données)
+
+* Les données doivent rester **dans la juridiction du pays** où elles sont produites.
+* Exemple : certaines données de santé en France doivent être hébergées dans un HDS (Hébergeur de Données de Santé) agréé.
+* Contrainte forte pour les multinationales utilisant le Cloud (AWS, Azure, GCP).
+
+</div>
+
+---
+
+###  Enjeux Organisationnels et Gouvernance du Big Data
+
+<div style="font-size:26px">
+
+## 3️⃣ Sécurité & conformité
+
+### 🔹 Techniques d’anonymisation et pseudonymisation
+
+* **Anonymisation** : transformation irréversible (ex. suppression d’ID, agrégation).
+* **Pseudonymisation** : remplacement par un identifiant artificiel, mais ré-identifiable via clé sécurisée.
+* Exemple :
+
+  * Études médicales → anonymisation totale.
+  * Bases clients → pseudonymisation pour permettre analyses marketing.
+
+</div>
+
+---
+
+###  Enjeux Organisationnels et Gouvernance du Big Data
+
+<div style="font-size:21px">
+
+## 4️⃣ Dilemmes éthiques
+
+### 🔹 Biais algorithmiques
+
+* Problème : modèles d’IA reproduisent (ou amplifient) les biais présents dans les données d’entraînement.
+* Exemples :
+
+  * Algorithmes de recrutement discriminant les femmes car entraînés sur des CV majoritairement masculins.
+  * Modèle de scoring de crédit défavorisant certaines zones géographiques.
+* Solutions :
+
+  * Audits réguliers.
+  * Métriques de fairness (disparate impact, equalized odds).
+  * Jeux de données diversifiés.
+
+</div>
+
+---
+
+###  Enjeux Organisationnels et Gouvernance du Big Data
+
+<div style="font-size:20px">
+
+## 4️⃣ Dilemmes éthiques
+
+### 🔹 Surveillance et vie privée
+
+* Collecte massive de données = risque de dérive vers la surveillance intrusive.
+* Exemple : caméras de reconnaissance faciale dans l’espace public.
+* Question éthique : sécurité vs libertés individuelles.
+
+### 🔹 Confiance numérique
+
+* Si les utilisateurs n’ont pas confiance, ils ne partagent pas leurs données.
+* Exemples :
+
+  * Scandale Cambridge Analytica → perte de confiance envers Facebook.
+  * Banques mettant en avant la transparence pour rassurer clients (open banking).
+* **Objectif clé** : créer un cadre de **transparence, explicabilité et contrôle utilisateur**.
+
+</div>
+
+---
+
+####  Enjeux Organisationnels et Gouvernance du Big Data
+
+<div style="font-size:20px">
+
+<br>
+<center>
+<img src="./assets/gouvernance.png" width="300px" >
+</center>
+
+</div>
+
+
+
+
+
+

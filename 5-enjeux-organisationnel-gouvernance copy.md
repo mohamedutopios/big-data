@@ -163,7 +163,7 @@ Voici un contenu **très détaillé et structuré** pour la partie **Enjeux orga
 
 ```
            ┌───────────────────────────┐
-           │      DATA OFFICE           │
+           │      DATA OFFICE          │
            │  (CDO, Architectes, Stewards) │
            └───────────┬───────────────┘
                        │
