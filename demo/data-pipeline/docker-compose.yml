@@ -1,0 +1,134 @@
+version: "3.9"
+
+services:
+  redpanda:
+    image: redpandadata/redpanda:latest
+    command:
+      - redpanda
+      - start
+      - --smp
+      - "1"
+      - --overprovisioned
+      - --memory
+      - 512M
+      - --reserve-memory
+      - 0M
+      - --node-id
+      - "0"
+      - --check=false
+      - --kafka-addr
+      - PLAINTEXT://0.0.0.0:9092,OUTSIDE://0.0.0.0:19092
+      - --advertise-kafka-addr
+      - PLAINTEXT://redpanda:9092,OUTSIDE://localhost:19092
+    ports:
+      - "9092:9092"
+      - "19092:19092"
+      - "9644:9644"
+
+  redpanda-console:
+    image: redpandadata/console:latest
+    environment:
+      - KAFKA_BROKERS=redpanda:9092
+    ports:
+      - "8080:8080"
+    depends_on:
+      - redpanda
+
+  cassandra:
+    image: cassandra:4.1
+    environment:
+      - MAX_HEAP_SIZE=512M
+      - HEAP_NEWSIZE=128M
+    ports:
+      - "9042:9042"
+    healthcheck:
+      test: ["CMD-SHELL", "cqlsh -e 'DESCRIBE KEYSPACES' || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 20
+
+  cql-init:
+    image: cassandra:4.1
+    depends_on:
+      cassandra:
+        condition: service_healthy
+    volumes:
+      - ./cassandra/init.cql:/init/init.cql:ro
+    entrypoint: ["/bin/bash","-lc"]
+    command: >
+      "cqlsh cassandra -f /init/init.cql && echo 'CQL init done'"
+
+  spark-master:
+    build:
+      context: ./spark-app
+      dockerfile: Dockerfile
+    environment:
+      - SPARK_MODE=master
+      - SPARK_MASTER_HOST=spark-master
+    ports:
+      - "7077:7077"
+      - "8081:8080"
+    depends_on:
+      - redpanda
+      - cassandra
+      - cql-init
+    volumes:
+      - ./spark-app/jobs:/opt/bitnami/spark/jobs:ro
+
+  spark-worker:
+    image: bitnami/spark:3.5
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark-master:7077
+    depends_on:
+      - spark-master
+
+  spark-streaming:
+    build:
+      context: ./spark-app
+      dockerfile: Dockerfile
+    environment:
+      - SPARK_MODE=client
+      - KAFKA_BOOTSTRAP_SERVERS=redpanda:9092
+      - TOPIC=orders
+      - CASSANDRA_HOST=cassandra
+      - CASSANDRA_KEYSPACE=analytics
+    command: >
+      bash -lc "spark-submit
+      --master spark://spark-master:7077
+      --packages
+      org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.0,
+      com.datastax.spark:spark-cassandra-connector_2.12:3.5.0
+      /opt/bitnami/spark/jobs/streaming_to_cassandra.py"
+    depends_on:
+      - spark-master
+      - cassandra
+      - cql-init
+      - redpanda
+    volumes:
+      - ./spark-app/jobs:/opt/bitnami/spark/jobs:ro
+
+  generator:
+    build:
+      context: ./generator
+      dockerfile: Dockerfile
+    environment:
+      - KAFKA_BOOTSTRAP_SERVERS=redpanda:9092
+      - TOPIC=orders
+      - RATE_PER_SEC=5
+    depends_on:
+      - redpanda
+
+  node:
+    build:
+      context: ./node-app
+      dockerfile: Dockerfile
+    environment:
+      - CASSANDRA_HOST=cassandra
+      - CASSANDRA_KEYSPACE=analytics
+    ports:
+      - "3000:3000"
+    depends_on:
+      - cassandra
+      - cql-init
+

@@ -1,0 +1,12 @@
+{
+    "name": "analytics-dashboard",
+    "version": "1.0.0",
+    "description": "Minimal dashboard over Cassandra data",
+    "main": "server.js",
+    "license": "MIT",
+    "dependencies": {
+      "cassandra-driver": "^4.7.2",
+      "express": "^4.19.2"
+    }
+  }
+  

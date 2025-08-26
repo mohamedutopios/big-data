@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <title>Dashboard - CA par minute</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; margin: 24px; }
+    h1 { margin: 0 0 12px; }
+    #wrap { max-width: 900px; }
+    .meta { color:#555; margin-bottom:12px; }
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <h1>CA par minute</h1>
+    <div class="meta">Source : Cassandra (analytics.revenue_per_minute)</div>
+    <canvas id="chart" height="100"></canvas>
+  </div>
+
+  <script>
+    async function load() {
+      const res = await fetch("/api/revenue");
+      const data = await res.json();
+      const labels = data.map(r => new Date(r.window_start).toLocaleTimeString());
+      const revenue = data.map(r => r.total_revenue);
+
+      const ctx = document.getElementById('chart').getContext('2d');
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels,
+          datasets: [{ label: '€ / minute', data: revenue, fill: false, tension: 0.2 }]
+        },
+        options: {
+          responsive: true,
+          scales: {
+            y: { beginAtZero: true }
+          }
+        }
+      });
+    }
+    load();
+  </script>
+</body>
+</html>

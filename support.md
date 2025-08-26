@@ -1955,6 +1955,32 @@ Contrairement à d’autres modèles, Cassandra **sacrifie la cohérence stricte
 
 </div>
 
+---
+
+###  Enjeux Organisationnels et Gouvernance du Big Data
+
+<div style="font-size:20px">
+
+## 4️⃣ Dilemmes éthiques
+
+### 🔹 Surveillance et vie privée
+
+* Collecte massive de données = risque de dérive vers la surveillance intrusive.
+* Exemple : caméras de reconnaissance faciale dans l’espace public.
+* Question éthique : sécurité vs libertés individuelles.
+
+### 🔹 Confiance numérique
+
+* Si les utilisateurs n’ont pas confiance, ils ne partagent pas leurs données.
+* Exemples :
+
+  * Scandale Cambridge Analytica → perte de confiance envers Facebook.
+  * Banques mettant en avant la transparence pour rassurer clients (open banking).
+* **Objectif clé** : créer un cadre de **transparence, explicabilité et contrôle utilisateur**.
+
+</div>
+
+
 
 
 
