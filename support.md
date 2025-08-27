@@ -45,7 +45,8 @@ footer: "Utopios® Tous droits réservés"
 
 <div style="font-size:39px">
 
-Le Big Data se définit par un ensemble de caractéristiques qui dépassent les capacités traditionnelles des systèmes d’information classiques. Historiquement, on parle des **3V** (Volume, Vélocité, Variété), mais la définition a été enrichie à **5V** (et parfois même 7V, 10V dans certaines littératures).
+- Le Big Data se définit par un ensemble de caractéristiques qui dépassent les capacités traditionnelles des systèmes d’information classiques. 
+- Historiquement, on parle des **3V** (Volume, Vélocité, Variété), mais la définition a été enrichie à **5V** (et parfois même 7V, 10V dans certaines littératures).
 
 </div>
 
@@ -1979,6 +1980,622 @@ Contrairement à d’autres modèles, Cassandra **sacrifie la cohérence stricte
 * **Objectif clé** : créer un cadre de **transparence, explicabilité et contrôle utilisateur**.
 
 </div>
+
+
+---
+
+<!-- _class: lead -->
+<!-- _paginate: false -->
+
+## Big Data & Intelligence Artificielle
+
+---
+
+###  Big Data & Intelligence Artificielle
+
+<div style="font-size:24px">
+
+## 1) Le lien Big Data → Machine Learning → Deep Learning
+
+### a) Chaîne de valeur (de la donnée au modèle en prod)
+
+**Collecte → Stockage → Préparation → Features → Entraînement → Évaluation → Déploiement → Observabilité → Boucles de feedback.**
+
+* **Big Data** = capacités **volume/vitesse/variété** (lakes, streams, NoSQL) pour **nourrir** les modèles.
+* **Machine Learning (ML)** = algos apprenants (GBM, régressions, arbres, SVM…) efficaces avec **features conçues** par des humains.
+* **Deep Learning (DL)** = réseaux profonds (CNN, RNN, Transformers) apprenant **représentations** depuis des données massives; devient **state-of-the-art** quand on a **beaucoup de données** + compute.
+
+</div>
+
+
+---
+
+### Big Data & Intelligence Artificielle
+
+<div style="font-size:30px">
+
+## 1) Le lien Big Data → Machine Learning → Deep Learning
+
+### b) Quand choisir quoi ?
+
+* **Peu de données / forte explicabilité** → ML “classique” (XGBoost, GLM).
+* **Données massives hétérogènes (texte, image, audio)** → DL (Transformers, CNN).
+* **Temps réel faible latence** → modèles compacts/quantifiés, ou **inférence sur edge**.
+
+
+</div>
+
+
+---
+
+
+### Big Data & Intelligence Artificielle
+
+<div style="font-size:26px">
+
+## 1) Le lien Big Data → Machine Learning → Deep Learning
+
+### c) Architecture type “data→IA”
+
+```
+Sources (apps, IoT, logs, DB, web)
+      │
+Ingestion (Kafka/NiFi/CDC) ──► Data Lake/Lakehouse (S3/ADLS + Delta/Iceberg)
+      │                                       │
+      ├─► Préparation & Features (Spark/Flink + Feature Store: Feast/Tecton)
+      │                                       │
+      └─► Entraînement (Databricks/Ray/Vertex/AzureML) + Registry (MLflow)
+                                              │
+                                  Déploiement (REST/gRPC, Batch scoring, Stream)
+                                              │
+                                  Observabilité (drift, qualité, coûts, sécurité)
+```
+</div>
+
+
+---
+
+### Big Data & Intelligence Artificielle
+
+<div style="font-size:26px">
+
+## 2) La donnée = carburant de l’IA
+
+### a) Qualité > Quantité (mais la quantité aide)
+
+* **Signal utile** > bruit: déduplication, normalisation, nettoyage, **data contracts**.
+* **Balance classes / fairness**: ré-échantillonnage, poids de classe, audits de biais.
+* **Labels**: or/argent/bronze (humain, heuristique, distant), **guides d’annotation**.
+
+### b) Ingénierie des données
+
+* **Schemas stables** (Avro/Protobuf + registry), **pii tagging** (PII/PHI).
+* **Formats colonnes** (Parquet/ORC), **partitions** (date, clé métier).
+* **Feature Store**: cohérence **offline/online**, historique (time-travel), réutilisation.
+
+</div>
+
+
+---
+
+### Big Data & Intelligence Artificielle
+
+<div style="font-size:28px">
+
+## 2) La donnée = carburant de l’IA
+
+<br>
+
+### c) Data-centric AI (pratiques)
+
+* **Augmentation** (texte: back-translation; image: flips/crops; audio: time-shift).
+* **Synthétique** (diffusion/LLM) **étiquetée** + contrôlée par **tests de fuite** (éviter la mémorisation PII).
+* **Évaluation continue**: set d’épreuves vivantes (bench “canari” par cas d’usage).
+
+
+</div>
+
+
+---
+
+### Big Data & Intelligence Artificielle
+
+<div style="font-size:23px">
+
+### 3) Exemples concrets
+
+#### 3.1 Chatbots intelligents (NLP)
+
+#### a) Objectifs
+
+* **SAV / self-service** (réduction contacts), **productivité** agents, **vente assistée** (reco, cross-sell).
+
+#### b) Pipeline (RAG + outils)
+
+```
+Documents (FAQ, contrats, emails, KB, sites)
+      │
+Ingestion & chunking (200–800 tokens, overlap)
+      │
+Nettoyage + PII redaction + enrichissement (métadonnées)
+      │
+Embeddings (e.g., bge/all-mpnet) → Vector DB (FAISS/PGVector/Weaviate)
+      │
+► Chat runtime:
+User prompt ─→ Retrieval top-k ─→ Context builder ─→ LLM (génération)
+                              │
+                        Outils (fonction appel: CRM, commandes, paiements)
+```
+
+</div>
+
+
+---
+
+
+### Big Data & Intelligence Artificielle
+
+<div style="font-size:22px">
+
+### 3) Exemples concrets
+
+#### 3.1 Chatbots intelligents (NLP)
+
+#### c) Points clés “Big Data”
+
+* **Indexation massive** (millions de chunks), **MàJ incrémentales** (CDC).
+* **Diversité** des sources (PDF/HTML/Docx/CSV) → **normalisation** (unifier).
+* **Observabilité du RAG**: taux de **réponses sourcées**, **hallucination rate**, **coverage** des requêtes.
+
+#### d) Métriques
+
+* **Task Success Rate** / **First Contact Resolution**.
+* **Faithfulness** (réponses appuyées par documents), **Context Recall/Precision**.
+* **Temps de réponse P95**, **coût / session**, **CSAT/NPS**.
+
+#### e) Garde-fous & conformité
+
+* **Filtrage PII**, **journaux** (audit), **RBAC/ABAC** (context par utilisateur).
+* **Toxicité/risques** (modérateurs), **logger** prompts/outputs pour **ré-entrainer**.
+
+</div>
+
+
+---
+
+### Big Data & Intelligence Artificielle
+
+<div style="font-size:22px">
+
+### 3) Exemples concrets
+
+#### 3.1 Chatbots intelligents (NLP)
+
+#### c) Points clés “Big Data”
+
+* **Indexation massive** (millions de chunks), **MàJ incrémentales** (CDC).
+* **Diversité** des sources (PDF/HTML/Docx/CSV) → **normalisation** (unifier).
+* **Observabilité du RAG**: taux de **réponses sourcées**, **hallucination rate**, **coverage** des requêtes.
+
+#### d) Métriques
+
+* **Task Success Rate** / **First Contact Resolution**.
+* **Faithfulness** (réponses appuyées par documents), **Context Recall/Precision**.
+* **Temps de réponse P95**, **coût / session**, **CSAT/NPS**.
+
+#### e) Garde-fous & conformité
+
+* **Filtrage PII**, **journaux** (audit), **RBAC/ABAC** (context par utilisateur).
+* **Toxicité/risques** (modérateurs), **logger** prompts/outputs pour **ré-entrainer**.
+
+</div>
+
+
+---
+
+### Big Data & Intelligence Artificielle
+
+<div style="font-size:22px">
+
+### 3) Exemples concrets
+
+### 3.2 Vision par ordinateur (reconnaissance d’image massive)
+
+#### a) Cas d’usage
+
+* **Inspection qualité** (industrie), **retail** (détection rayons), **santé** (imagerie), **sécurité** (intrusion).
+
+#### b) Pipeline
+
+```
+Capture (caméras/edge) → Buffer stream (RTSP/Kinesis) → Data Lake (frames/clips)
+       │                          │
+       │                          └─► Labeling (CVAT/Labelbox, guidelines stricts)
+       │
+Prétraitement (resize, normalisation, augmentations)
+       │
+Modèle (CNN/ViT/YOLO/Mask R-CNN) → Entraînement distribué (Horovod/DeepSpeed/Ray)
+       │
+Compression (quantization, pruning, distillation)
+       │
+Déploiement (edge GPU/CPU, Triton) + Monitoring (fps, mAP, drift)
+```
+
+</div>
+
+
+---
+
+### Big Data & Intelligence Artificielle
+
+<div style="font-size:25px">
+
+### 3) Exemples concrets
+
+### 3.2 Vision par ordinateur (reconnaissance d’image massive)
+
+#### c) Big Data angle
+
+* **Grand-échelle**: millions d’images/vidéos (stockage objet, lifecycle policies).
+* **Versionnage datasets** (DVC/LakeFS), **équilibre classes** (hard negatives mining).
+* **Edge**: **pré-filtrage** (détecter & découper ROIs) pour réduire coût.
+
+#### d) Métriques
+
+* **mAP**, **IoU**, **Recall/Precision**, **latence** par image, **FPS**.
+* **Taux faux positifs** (coût opérationnel), **drift** (lumière, caméras neuves).
+
+</div>
+
+
+---
+
+
+### Big Data & Intelligence Artificielle
+
+<div style="font-size:25px">
+
+### 3) Exemples concrets
+
+### 3.3 IA générative (modèles de langage, multimodalité)
+
+#### a) Cas d’usage
+
+* **Contenu marketing** (adapté au ton/brand), **résumés** docs, **assistants code**, **Q\&R contractuelle**, **génération d’images/vidéo**.
+
+#### b) Modèles & approches
+
+* **LLM** (texte-→texte), **VLM** (image+texte), **Diffusion** (image/audio/vidéo).
+* **Stratégies** :
+
+  * **RAG** (retrieval-augmented), **fine-tuning léger** (LoRA/Adapters) sur données métiers,
+  * **Tool use** (functions), **agents** (planification, outils multiples).
+
+</div>
+
+
+---
+
+### Big Data & Intelligence Artificielle
+
+<div style="font-size:28px">
+
+### 3) Exemples concrets
+
+### 3.3 IA générative (modèles de langage, multimodalité)
+
+#### c) Flux data & gouvernance
+
+* **Corpus d’entraînement** curaté (déduplication, filtrage toxicité, licences).
+* **PII/PHI**: hash/masquage + **tests de ré-identification**.
+* **Évals**: factualité (closed-book QA), **exactitude** (rouge/bleu en résumé structuré), **préférence humaine** (win-rate), **sécurité** (jailbreak tests).
+
+</div>
+
+
+---
+
+### Big Data & Intelligence Artificielle
+
+<div style="font-size:28px">
+
+### 3) Exemples concrets
+
+### 3.3 IA générative (modèles de langage, multimodalité)
+
+#### c) Flux data & gouvernance
+
+* **Corpus d’entraînement** curaté (déduplication, filtrage toxicité, licences).
+* **PII/PHI**: hash/masquage + **tests de ré-identification**.
+* **Évals**: factualité (closed-book QA), **exactitude** (rouge/bleu en résumé structuré), **préférence humaine** (win-rate), **sécurité** (jailbreak tests).
+
+</div>
+
+
+---
+
+### Big Data & Intelligence Artificielle
+
+<div style="font-size:23px">
+
+### 3) Exemples concrets
+
+### 3.3 IA générative (modèles de langage, multimodalité)
+
+#### c) Flux data & gouvernance
+
+* **Corpus d’entraînement** curaté (déduplication, filtrage toxicité, licences).
+* **PII/PHI**: hash/masquage + **tests de ré-identification**.
+* **Évals**: factualité (closed-book QA), **exactitude** (rouge/bleu en résumé structuré), **préférence humaine** (win-rate), **sécurité** (jailbreak tests).
+
+#### d) Coûts & perf
+
+* **Training**: distribué (FSDP/ZeRO/DeepSpeed), mix de précision (bf16/fp8), **checkpointing**.
+* **Inférence**: **quantization** (8/4 bits), **KV cache**, **speculative decoding**, **distillation**, batching dynamique.
+* **FinOps**: tracer **€/1k tokens**, **€/réponse**, auto-scale, cache sémantique.
+
+
+</div>
+
+
+---
+
+### Big Data & Intelligence Artificielle
+
+<div style="font-size:23px">
+
+### 4) MLOps / LLMOps (industrialisation)
+
+### a) Invariants
+
+* **Registry** (MLflow) : modèles, versions, signatures.
+* **CI/CD**: tests data (Great Expectations), tests perf (latence/throughput), tests sécurité (PII leak).
+* **Canary/Shadow**: tester sur trafic miroir, rollback instantané.
+* **Monitoring**: **drift** (population, concept), **quality** (AUC/mAP/ROUGE), **safety** (toxicity), **coûts**.
+
+### b) Spécificités LLM
+
+* **Prompt/versioning** (prompts, outils, policies), **eval suites** (instructions, rag, tool-use).
+* **Guardrails** (politiques contenu, contraintes format JSON), **rate limits**.
+* **Feedback** (thumbs, labels) → **RLAIF/RLHF** léger.
+
+
+</div>
+
+
+---
+
+### Big Data & Intelligence Artificielle
+
+<div style="font-size:23px">
+
+
+## 6) Schémas (ASCII) à insérer en slides
+
+### a) Vue unifiée Big Data ↔ IA
+
+```
+Sources → Ingestion (Kafka/ETL) → Lakehouse (Delta/Iceberg) → Feature/Vector Stores
+                                            │                         │
+                                     Training (ML/DL)           Retrieval (RAG)
+                                            │                         │
+                                 Registry → Serving/API ← Orchestrateur (Airflow)
+                                            │
+                                    Observabilité (drift, qualité, coûts)
+```
+
+### b) Chatbot RAG opérationnel
+
+```
+User → Orchestrateur → Retriever → Top-k docs
+                     │             │
+                     ├→ Tools (CRM, DB, Paiement)   (si nécessaire)
+                     │
+                     └→ LLM (policy + prompts) → Réponse + Citations → Logs/Evals
+```
+
+</div>
+
+
+---
+
+### Big Data & Intelligence Artificielle
+
+<div style="font-size:30px">
+
+## 7) Métriques essentielles par domaine
+
+| Domaine   | Modèle       | Principales métriques                                             | Opérationnel                          |
+| --------- | ------------ | ----------------------------------------------------------------- | ------------------------------------- |
+| Chatbot   | LLM + RAG    | Task success, faithfulness, hallucinations, latence P95, coût/req | Taux auto-résolution, CSAT            |
+| Vision    | CNN/ViT/YOLO | mAP, IoU, Recall/Prec, FPS, latence                               | Taux défauts, arrêts, re-work         |
+| Tabulaire | XGB/NN       | AUC/ROC, F1, KS, calibration                                      | € évités, faux positifs, SLA décision |
+
+
+
+</div>
+
+---
+
+### Big Data & Intelligence Artificielle
+
+<div style="font-size:28px">
+
+### 8) Risques & anti-patterns (et remèdes)
+
+* **Data swamp** (raw sans gouvernance) → **zones curated** (silver/gold), data contracts, catalog.
+* **Overfitting aux benchmarks** → évals **proches métier**, tests “canari” sur trafic réel.
+* **Hallucinations RAG** → **retrieval de qualité** (chunking, rerankers, citations obligatoires).
+* **Biais & PII** → audits fairness, redaction PII, contrôle d’accès fin, logging conforme RGPD.
+* **Coûts qui explosent** → profiler, **quantization/distillation**, cache sémantique, auto-scale, stop idle.
+
+
+</div>
+
+---
+
+
+<!-- _class: lead -->
+<!-- _paginate: false -->
+
+## Perspective et tendances
+
+---
+
+### Perspective et tendances
+
+<div style="font-size:28px">
+
+## 1) DataOps, MLOps, AIOps : automatisation & industrialisation
+
+### a) Définitions (à retenir)
+
+* **DataOps** : pratiques & outils pour **fiabiliser** et **accélérer** le flux **données → information** (tests de données, CI/CD de pipelines, observabilité, coûts).
+* **MLOps** : pratiques & outils pour **mettre en prod** et **opérer** les **modèles** (versionnage, déploiement, surveillance, drift, gouvernance).
+* **AIOps** : usage de l’**IA pour l’exploitation IT** (corrélation logs/metrics/traces, détection d’anomalies, remédiation automatique).
+
+</div>
+
+---
+
+### Perspective et tendances
+
+<div style="font-size:21px">
+
+## 1) DataOps, MLOps, AIOps : automatisation & industrialisation
+
+### b) Pipelines “as code” & CI/CD (exemples concrets)
+
+* **DataOps** :
+
+  * *Tests* : schéma, valeurs attendues, duplicats, fraîcheur (SLA).
+  * *CI* : sur PR, exécuter **dbt tests**/**Great Expectations** sur un **échantillon** + **lint** SQL.
+  * *CD* : promotion **raw→silver→gold** via jobs versionnés, **GitOps** (envs dev/stage/prod).
+* **MLOps** :
+
+  * *Registry* (MLflow) + **model signature** + **packaging** (Docker).
+  * *Canary/Shadow* + rollback instantané.
+  * *Monitoring* : qualité en ligne (AUC/F1), **drift (feature & concept)**, **latence P95**, **coût inference**.
+* **AIOps** :
+
+  * Collecte **metrics/logs/traces** ; corrélation d’événements ; détection anomalies (saisonnalité, ruptures) ; **playbooks** d’auto-remédiation (ex. redémarrage contrôlé d’un consumer Kafka, scaling KEDA).
+</div>
+
+---
+
+### Perspective et tendances
+
+<div style="font-size:24px">
+
+## 1) DataOps, MLOps, AIOps : automatisation & industrialisation
+
+### c) KPIs par discipline
+
+* **DataOps** : taux de jobs OK, délai PR→prod, incidents data/mois, % datasets avec SLA respecté, coût/Go.
+* **MLOps** : temps idée→prod, AUC/F1 en prod vs entraînement, drift détecté/mitigé, MTTR incidents modèle.
+* **AIOps** : MTTD/MTTR, bruit alertes↓, économies via auto-remédiations, SLOs respectés.
+
+### d) Anti-patterns & remèdes
+
+* Pipelines “boîte noire” → **lineage + tests + doc auto**.
+* Modèles POC sans run-book → **playbooks** + **SLO** + **on-call**.
+* Alertes “spam” → **seuils dynamiques**, **regroupement**, **suppression duplication**.
+
+</div>
+
+---
+
+### Perspective et tendances
+
+<div style="font-size:26px">
+
+## 2) Edge Computing & IoT (traitement proche de la source)
+
+### a) Pourquoi l’edge ?
+
+* **Latence** (contrôle en ms), **résilience locale** (lien cloud instable), **coût** (ne pas remonter tout le brut), **privacy** (traiter PII sur site).
+
+### b) Topologie type
+
+```
+Capteurs/PLC → Gateway (MQTT/OPC-UA) → Cluster Edge (K3s/k8s)
+   │               │                         │
+   │               ├→ Filtrage/agrégations   ├→ Inference temps réel (CPU/GPU)
+   │               └→ Buffer (Kafka/Pulsar)  └→ Cache/TSDB (Influx/Timescale)
+                                │
+                           Cloud Lakehouse (historisation, ML training)
+```
+</div>
+
+---
+
+### Perspective et tendances
+
+<div style="font-size:22px">
+
+## 2) Edge Computing & IoT (traitement proche de la source)
+
+### c) Bonnes pratiques
+
+* **MQTT** pour capteurs, **OPC-UA** en OT.
+* **Fenêtres** (tumbling/sliding) & **CEP** pour événements complexes (ex. séquence anomalie).
+* **Traitement “à la source”** : compression, détection d’anomalies simple (z-score), **inférence quantifiée** (INT8) sur Jetson/CPU.
+* **Sécurité** : certificats mTLS, **Zero Trust** sur liens edge↔cloud, partitionnement réseau OT/IT.
+
+### d) Cas concrets
+
+* Maintenance prédictive (vibrations), vision qualité en ligne (défauts), **micro-coupures** réseau tolérées (store-and-forward), **ré-envoi** idempotent.
+
+### e) KPIs
+
+Latence edge, % paquets perdus, couverture données (backfill), temps de redémarrage gateway, économie bande passante, **OEE** usine.
+
+</div>
+
+---
+
+### Perspective et tendances
+
+<div style="font-size:26px">
+
+## 3) Temps réel extrême : 5G, capteurs, streaming
+
+### a) Contraintes & objectifs
+
+* **Délais** très bas (théoriquement jusqu’à quelques ms ; en pratique souvent **10–20 ms**), **débits** élevés (eMBB), **densité** capteurs (mMTC), **fiabilité** (URLLC).
+
+### b) Pile “low-latency” (patterns)
+
+```
+Producers → Kafka/Pulsar (acks=all, compaction pour clés) → Flink (exactly-once)
+           → Store on-line (Redis/RocksDB) → Serving (gRPC) → Action (API, actuateur)
+```
+* **Watermarks** corrects pour l’ordre temporel, **backpressure** gérée, **exactly-once** (ids, transactions).
+* **Idempotence** (clé business), **timeouts** courts, **réplication** inter-AZ.
+
+
+</div>
+
+---
+
+### Perspective et tendances
+
+<div style="font-size:26px">
+
+## 3) Temps réel extrême : 5G, capteurs, streaming
+
+### c) Exemples
+
+* **Fraude** carte < 50 ms (features glissantes), **contrôle trafic** (priorisation bus/feux), **énergie** (réglage fréquence/charge).
+
+### d) Tests & obs
+
+* Tests charge à **burst** (P99), **chaos** (perte broker), **replay** de flux ; dashboards **lag consumer**, **watermarks**, **throughput**, **latence P95/P99**.
+
+</div>
+
+---
+
 
 
 
